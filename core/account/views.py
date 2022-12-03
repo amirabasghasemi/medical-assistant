@@ -23,7 +23,7 @@ def sing_up(request):
 @login_required
 def logout_user(request):
     logout(request)
-    return redirect("home-page")
+    return redirect("login")
 
 
 @require_http_methods(request_method_list=['POST', 'GET'])
@@ -39,8 +39,9 @@ def login_user(request):
                 return redirect('home-page')
         return redirect('login')
     else:
-        form = UserLoginForm()
-        return render(request, 'home/login.html', {'form': form})
+        form_log = UserLoginForm()
+        form_sing = UserRegisterForm()
+        return render(request, 'index/index.html', {'form_log': form_log, 'form_sing': form_sing})
 
 
 
