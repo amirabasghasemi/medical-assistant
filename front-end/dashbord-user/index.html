@@ -1,0 +1,285 @@
+<!doctype html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MEDICAL-ASSISTANT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-list shadow">
+            <button class="border-0 bg-white">
+                <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="40"
+                    onclick="this.classList.toggle('active')">
+                    <path class="line top"
+                        d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                    <path class="line middle" d="m 30,50 h 40" />
+                    <path class="line bottom"
+                        d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="site-wrap d-flex justify-content-center">
+        <nav class="site-nav responsive-m">
+
+            <div class="name p-2">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">
+                    <img src="../img/2022-11-30_19h35_30.png" alt="mdo" class="rounded-circle" width="40" height="40">
+                    amirabasghasemi2022
+                </a>
+                <ul class="dropdown-menu text-small shadow border-0 rounded-3" data-popper-placement="bottom-end">
+                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                    <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModale">پروفایل</a></li>
+                    <li><a class="dropdown-item" href="#">خروج</a></li>
+                </ul>
+            </div>
+            <ul class="p-1">
+                <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="#">تیکت ها</a></li>
+                <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
+                </li>
+                <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a></li>
+                <li class="list-group"><a href="#0" data-bs-toggle="modal" data-bs-target="#exampleModal">خروج</a></li>
+            </ul>
+
+            <div class="note">
+                <h3>لورم ایپسوم</h3>
+                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+            </div>
+
+        </nav>
+
+        <main id="body" class="dark-mode col-lg-10 col-12 shadow">
+            <!--dark mode code html ...
+            <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
+-->
+            <div id="profile" class="tabcontent body active">
+                <header>
+                    <div class="col-6">
+                        <div class="breadcrumbs">
+                            <a class="nav-link link-secondary" href="#0/">ارتباط باپشتیبانی</a>
+                        </div>
+                        <h1 class="title">تیکت ها</h1>
+                    </div>
+                    <div>
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <nav class="nav-tabs" id="nav-tabs">
+                        <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
+                            href="#0">
+                            تیکت های اخیر
+
+                        </a>
+                        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')"
+                            href="#0">
+                            ارسال تیکت جدید
+
+                        </a>
+                    </nav>
+                </header>
+                <div class="tabbox active" id="before">
+                    <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-secondary text-center mt-5 mb-5">هیچ تیکت پشتیبانی برای نمایش وجود ندارد.</p>
+                        </div>
+                    </div>
+                    <div class="row shadow-tobbox mt-5 p-5">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <table class="table text-secondary mt-5">
+                            <thead>
+                                <tr>
+                                    <th class="title-head">شماره</th>
+                                    <th class="title-head">موضوع تیکت</th>
+                                    <th class="title-head">تاریخ</th>
+                                    <th class="title-head" style="width:25%">وضعیت بررسی</th>
+                                    <th class="title-head text-center">مشاهده وضعیت</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>حساب کاربری</td>
+                                    <td>1401/10/12</td>
+                                    <td>
+                                        <p class="text-warning text-table-alert">درحال بررسی ...</p>
+                                        <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>
+                                    </td>
+                                    <td class="text-center position-relative">
+                                        <i class="bi bi-card-text fs-4 icon-table" style="display: none;"></i>
+                                        <i class="bi bi-clock-history fs-4 icon-table text-warning"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tabbox" id="creation">
+                    <div class="row shadow-tobbox mt-4 rounded-3 p-3">
+                        <div class="col-lg-12">
+                            <h4 class="note-tab">پشتیبانی</h4>
+                            <p class="text-secondary">پاسخگویی درسریع ترین زمان ممکن.</p>
+                        </div>
+                        <hr class="text-secondary">
+                        <div class="col-lg-12">
+                            <p class="note-tab">موضوع تیکت</p>
+                            <input class="col-12 rounded-2 input" type="text" placeholder="موضوع تیکت خودراواردکنید">
+                            <p class="note-tab mt-5">پیام</p>
+                            <textarea class="form-control col-12 rounded-2" aria-label="With textarea"
+                                placeholder="توضیحات مربوط به تیکت خودرادراین قسمت واردنمایید"></textarea>
+                            <div class="col-lg-12 d-flex flex-nowrap mt-5">
+                                <div class="col-6">
+                                    <p class="note-tab">قبل ازبارگذاری مجددصفحه،اطلاعات موردنظرراذخیره کنید.</p>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button class="custom-btn btn-13">ارسال تیکت</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="New-test" class="tabcontent body">
+                <header>
+                    <h1 class="title">تست جدید</h1>
+                    <p class="text-secondary mt-4">مقادیرخواسته شده راواردکنید.</p>
+                </header>
+                <hr class="text-secondary">
+            </div>
+            <div id="Experiments" class="tabcontent body">
+                <header>
+                    <div class="breadcrumbs">
+                        <a class="nav-link link-secondary" href="#0/"> لورم ایپسوم </a>
+                    </div>
+                    <h1 class="title">سوابق</h1>
+                </header>
+                <hr class="text-secondary">
+                <div class="body mt-5 shadow-tobbox p-5 rounded-3">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="widget blank no-padding">
+                                    <div class="panel panel-default work-progress-table">
+                                        <!-- Table -->
+                                        <table id="mytable" class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="title-head">شماره</th>
+                                                    <th class="title-head">عنوان</th>
+                                                    <th class="title-head">تاریخ</th>
+                                                    <th class="title-head text-center" style="width:25%">درصدابتلاء</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>تست دیابت</td>
+                                                    <td>1401/10/13</td>
+                                                    <td>
+                                                        <div class="progress">
+                                                            <div style="width: 60%;" aria-valuemax="100"
+                                                                aria-valuemin="0" aria-valuenow="60" role="progressbar"
+                                                                class="red progress-bar">
+                                                                <span>60%</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-header border-bottom-0 d-flex justify-content-between">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body py-0">
+                            <p>آیامیخواهیدازسایت خارج شوید؟</p>
+                        </div>
+                        <div class="modal-footer flex-column border-top-0">
+                            <button type="button" class="custom-btn btn-13 w-100 ">خروج ازسایت</button>
+                            <button type="button" class="btn btn-lg btn-light w-100 mx-0 btn-modal-exit"
+                                data-bs-dismiss="modal">خیر</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="exampleModale" tabindex="-1" aria-labelledby="exampleModalLabele"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-header mt-3 border-0 d-flex flex-wrap justify-content-center">
+                            <div class="position-relative">
+                                <img src="../img/2022-11-30_19h35_30.png" alt="mdo" class="rounded-circle border"
+                                    width="150" height="150">
+                            </div>
+                        </div>
+                        <div class="modal-body mb-3">
+                            <h5 class="col-12 email-card text-secondary">amirabasghasemi2022</h5>
+                            <h5 class="col-12 email-card text-secondary">امیرعباس قاسمی</h5>
+                            <button class="rounded-2 p-2 mt-4 custom-btn btn-13" style="width: 80%;">ویرایش
+                                اطلاعات</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
