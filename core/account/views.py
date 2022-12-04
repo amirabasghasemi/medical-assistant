@@ -14,6 +14,7 @@ def sing_up(request):
         if form.is_valid():
             form.save()
             return redirect('home-page')
+
         return redirect('register')
     else:
         form = UserRegisterForm()
@@ -29,14 +30,20 @@ def logout_user(request):
 @require_http_methods(request_method_list=['POST', 'GET'])
 def login_user(request):
     if request.method == "POST":
-        form = UserLoginForm(request.POST)
-        if form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
+        if 'email' in request.POST:
+            form = UserRegisterForm(request.POST)
+            if form.is_valid():
+                form.save()
                 return redirect('home-page')
+        else:
+            form = UserLoginForm(request.POST)
+            if form.is_valid():
+                username = request.POST.get('username')
+                password = request.POST.get('password')
+                user = authenticate(request, username=username, password=password)
+                if user is not None:
+                    login(request, user)
+                    return redirect('home-page')
         return redirect('login')
     else:
         form_log = UserLoginForm()

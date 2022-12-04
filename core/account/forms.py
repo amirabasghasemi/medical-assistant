@@ -7,8 +7,8 @@ from account.models import User
 
 class UserLoginForm(forms.Form):
     password = forms.CharField(label='Password', widget=forms.PasswordInput(
-        attrs={'class': 'e-field-inner', 'placeholder': 'password'}))
-    username = forms.CharField(label='username', widget=forms.TextInput(attrs={'class': 'e-field-inner'}))
+        attrs={'placeholder': 'password'}))
+    username = forms.CharField(label='username', widget=forms.TextInput(attrs={'placeholder': 'ایمیل یا نام کاربری'}))
 
     def save(self, commit=True):
         # Save the provided password in hashed format
@@ -25,20 +25,14 @@ class UserRegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'username', 'phone', 'first_name', 'last_name', 'is_staff', 'is_superuser', 'is_active',
-                  'sex', 'age')
+        fields = ('email', 'username')
 
     def __init__(self, *args, **kwargs):
         super(UserRegisterForm, self).__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['email'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['phone'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['first_name'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['last_name'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['age'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['sex'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['password1'].widget.attrs.update({'class': 'e-field-inner'})
-        self.fields['password2'].widget.attrs.update({'class': 'e-field-inner'})
+        self.fields['email'].widget.attrs.update({'type': 'email', 'placeholder': 'ادرس ایمیل'})
+        self.fields['username'].widget.attrs.update({'type': 'text', 'placeholder': 'نام کاربری'})
+        self.fields['password1'].widget.attrs.update({'type': 'password', 'placeholder': 'رمز عبور'})
+        self.fields['password2'].widget.attrs.update({'type': 'password', 'placeholder': 'تکرار رمز عبور'})
 
     def clean_password2(self):
         # Check that the two password entries match

@@ -13,24 +13,27 @@
 <div class="body-form">
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+
                 <h2 class="mb-4">ایجادحساب کاربری</h2>
                 <span>ازایمیل خودبرای ثبت نام استفاده کنید</span>
-                <input type="text" placeholder="نام ونام خانوادگی" />
-                <input type="email" placeholder="آدرس ایمیل" />
-                <input type="password" placeholder="رمز عبور" />
-                <input type="password" placeholder="تکراررمزعبور" />
-                <button>ثبت نام</button>
+                {{ form_sing.username }}
+                {{ form_sing.email }}
+                {{ form_sing.password1 }}
+                {{ form_sing.password2 }}
+                <button type="submit">ثبت نام</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
                 <h2 class="mb-4">ورود</h2>
                 <span>به حساب کاربری خودواردشوید</span>
-                <input type="email" placeholder="ایمیل" />
-                <input type="password" placeholder="رمزعبور" />
+                {{ form_log.username }}
+                {{ form_log.password }}
                 <a href="#">رمزخودرافراموش کرده اید؟</a>
-                <button>ورود</button>
+                <button type="submit">ورود</button>
             </form>
         </div>
         <div class="overlay-container">
