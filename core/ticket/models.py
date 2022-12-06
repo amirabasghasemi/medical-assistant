@@ -2,7 +2,6 @@ from django.conf import settings
 from django.db import models
 
 
-
 class Ticket(models.Model):
     status_choice = (
         (0, 'در حال بررسی'),
