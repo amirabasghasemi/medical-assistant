@@ -16,7 +16,7 @@
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
 
-                <h2 class="mb-4">ایجادحساب کاربری</h2>
+                <h2 class="mb-4">ایجاد حساب کاربری</h2>
                 <span>ازایمیل خودبرای ثبت نام استفاده کنید</span>
                 {{ form_sing.username }}
                 {{ form_sing.email }}
@@ -29,10 +29,10 @@
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <h2 class="mb-4">ورود</h2>
-                <span>به حساب کاربری خودواردشوید</span>
+                <span>به حساب کاربری خود وارد شوید</span>
                 {{ form_log.username }}
                 {{ form_log.password }}
-                <a href="#">رمزخودرافراموش کرده اید؟</a>
+                <a href="#">رمز خود را فراموش کرده اید؟</a>
                 <button type="submit">ورود</button>
             </form>
         </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h2>ایجادحساب کاربری</h2>
-                    <p>مشخصات شخصی خود را وارد کنیدتادرمان راشروع کنیم</p>
+                    <p>مشخصات شخصی خود را وارد کنید تا درمان را شروع کنیم</p>
                     <button class="ghost" id="signUp">ثبت نام</button>
                 </div>
             </div>
