@@ -1,0 +1,1046 @@
+{% load static %}
+<!doctype html>
+<html dir="rtl" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr+</title>
+     <link rel="icon" type="image/x-icon" href="{% static 'ticket/logo/61792-[Converted].png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'ticket/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'ticket/css/responsive.css' %}">
+</head>
+
+<body>
+    <!--header designed for mobile and tablet...-->
+    <header>
+        <div class="menu-list shadow-sm">
+            <div class="d-flex">
+                <button class="border-0 bg-white col-4 d-flex align-items-center menu-list" style="text-align: right;"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight"
+                    aria-controls="offcanvasNavbarLight">
+                    <i class="bi bi-list fs-1 note-tab"></i>
+                </button>
+                <div class="col-4 d-flex align-items-center text-center fs-3 note-tab menu-list">
+                    دکترپلاس
+                </div>
+                <div class="col-4 d-flex justify-content-start align-items-center p-2 menu-list"
+                    style="direction: ltr;">
+                    <a class="nav-link dropdown-toggle text-secondary" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">
+                        <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" alt="mdo" class="rounded-circle border" width="40"
+                            height="40">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow border-0 rounded-3" style="width: 150px;"
+                        data-popper-placement="bottom-end">
+                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                        <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModale">پروفایل</a></li>
+                        <li><a class="dropdown-item" href="#">خروج</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end border-0 shadow" tabindex="-1" id="offcanvasNavbarLight"
+            aria-labelledby="offcanvasNavbarLightLabel" aria-modal="true" role="dialog">
+            <div class="offcanvas-header">
+                <div class="name m-0 p-0">
+                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">
+                        <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" alt="mdo" class="rounded-circle" width="40" height="40">
+                        amirabasghasemi2022
+                    </a>
+                    <ul class="dropdown-menu text-small shadow border-0 rounded-3" style="width: 150px;"
+                        data-popper-placement="bottom-end">
+                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                        <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModale">پروفایل</a></li>
+                        <li><a class="dropdown-item" href="#">خروج</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offcanvas-body">
+                <nav class="site-nav">
+                    <ul class="m-0 p-0">
+                        <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="#">تیکت
+                                ها</a></li>
+                        <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
+                        </li>
+                        <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a>
+                        </li>
+                        <li class="list-group"><a>خروج</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--header, menu, dashboard designed for size 1020px and above...-->
+    <div class="site-wrap d-flex justify-content-center">
+        <!--dashboard designed in size 1020...-->
+        <nav class="site-nav responsive-m">
+            <div class="name p-2">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">
+                    <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" alt="mdo" class="rounded-circle" width="40" height="40">
+                    amirabasghasemi2022
+                </a>
+                <ul class="dropdown-menu text-small shadow border-0 rounded-3" data-popper-placement="bottom-end">
+                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                    <li><a class="dropdown-item" href="#">تنظیمات</a></li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                            data-bs-target="#exampleModale">پروفایل</a></li>
+                    <li><a class="dropdown-item" href="#">خروج</a></li>
+                </ul>
+            </div>
+            <ul class="p-1">
+                <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
+                </li>
+                <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a></li>
+                <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="#">تیکت ها</a></li>
+
+                <li class="list-group"><a>خروج</a></li>
+            </ul>
+            <div class="note text-center">
+                <h3>کاربر گرامی</h3>
+                <p class=" mt-3">جهت بالا رفتن دقت و عملکرد سایت، آزمایش های شما، باعث جمع‌آوری دیتاهای
+                    بیشتر و دقیقتر خواهد شد.</p>
+            </div>
+
+        </nav>
+        <!--main designed in all sizes with responsive...-->
+        <main id="body" class="dark-mode col-lg-10 col-12 shadow">
+            <!--dark mode code html ...
+            <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
+-->
+            <!--Designing the communication department with support...-->
+            <div id="profile" class="tabcontent body active">
+                <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <div class="breadcrumbs">
+                                <a class="nav-link link-secondary" href="#0/">ارتباط با پشتیبانی</a>
+                            </div>
+                            <h1 class="title">تیکت ها</h1>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" class="logo-header" alt="" srcset="">
+                        </div>
+                    </div>
+                    <nav class="nav-tabs" id="nav-tabs">
+                        <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
+                            href="#0">
+                            تیکت های اخیر
+
+                        </a>
+                        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')"
+                            href="#0">
+                            ارسال تیکت جدید
+
+                        </a>
+                    </nav>
+                </header>
+                <!--The box is designed for the ticket section to be empty...-->
+                <div class="tabbox active" id="before">
+                    <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-secondary text-center mt-5 mb-5">هیچ تیکت پشتیبانی برای نمایش وجود ندارد.</p>
+                        </div>
+                    </div>
+                    <!--Box design to display tickets...-->
+                    <div class="row shadow-tobbox mt-5 p-5">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <table class="table text-secondary mt-5">
+                            <thead>
+                                <tr>
+                                    <th class="title-head">شماره</th>
+                                    <th class="title-head">موضوع تیکت</th>
+                                    <th class="title-head">تاریخ</th>
+                                    <th class="title-head" style="width:25%">وضعیت بررسی</th>
+                                    <th class="title-head text-center">مشاهده وضعیت</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>حساب کاربری</td>
+                                    <td>1401/10/12</td>
+                                    <td>
+                                        <p class="text-warning text-table-alert">در حال بررسی ...</p>
+                                        <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>
+                                    </td>
+                                    <td class="text-center position-relative">
+                                        <i class="bi bi-card-text fs-4 icon-table" style="display: none;"></i>
+                                        <i class="bi bi-clock-history fs-4 icon-table text-warning"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--Box design for communication with support...-->
+                <div class="tabbox" id="creation">
+                    <div class="row shadow-tobbox mt-4 rounded-3 p-3">
+                        <div class="col-lg-12">
+                            <h4 class="note-tab">پشتیبانی</h4>
+                            <p class="text-secondary">پاسخگویی در سریع ترین زمان ممکن.</p>
+                        </div>
+                        <hr class="text-secondary">
+                        <div class="col-lg-12">
+                            <p class="note-tab">موضوع تیکت</p>
+                            <input class="col-12 rounded-2 input" type="text" placeholder="موضوع تیکت خود را وارد کنید">
+                            <p class="note-tab mt-5">پیام</p>
+                            <textarea class="form-control col-12 rounded-2" aria-label="With textarea"
+                                placeholder="توضیحات مربوط به تیکت خود را در این قسمت وارد نمایید"></textarea>
+                            <div class="col-lg-12 d-flex flex-nowrap mt-5">
+                                <div class="col-6">
+                                    <p class="note-tab">قبل از بارگذاری مجدد صفحه،اطلاعات مورد نظر را ذخیره کنید.</p>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button class="custom-btn btn-13">ارسال تیکت</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="New-test" class="tabcontent body">
+                <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <h1 class="title">تست جدید</h1>
+                            <p class="text-secondary mt-4">دکتر پلاس همراه همیشگی شما...</p>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+                        </div>
+                    </div>
+
+                </header>
+                <hr class="text-secondary">
+                <!--Designing test questions...-->
+                <div class=" body body-chek rounded-5 shadow-tobbox p-2 mt-5" style="height: 50vh;">
+                    <div id="carouselExampleCaptions" style="height: 200px;" class="carousel slide"
+                        data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active mt-2 p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره یک</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr class="line-card">
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا در طول زندگی خود حداقل 100 نخ سیگار
+                                            کشیده اید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Ask the last questions and show the test result...-->
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره پانزده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا شما فشارخون بالا دارید؟</h6>
+                                        <div class="d-flex">
+                                            <div class="d-flex mt-4 col-6">
+                                                <div class="grid">
+                                                    <label class="checkbox path">
+                                                        -بله
+                                                        <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                        <svg viewBox="0 0 21 21">
+                                                            <path
+                                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                            </path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                                <div class="grid me-4">
+                                                    <label class="checkbox path">
+                                                        -خیر
+                                                        <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                        <svg viewBox="0 0 21 21">
+                                                            <path
+                                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                            </path>
+                                                        </svg>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!--Test result display button...-->
+                                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                                <button class="custom-btn btn-5" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"><span>نتیجه تست</span></button>
+                                            </div>
+                                            <!--modal to display the result of the title...-->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content rounded-5 w-100 border-0 shadow">
+                                                        <div
+                                                            class="modal-header border-0 d-flex flex-wrap justify-content-center">
+                                                            <i
+                                                                class="bi bi-shield-check fs-1 col-12 title-head-modal"></i>
+                                                            <h5 class="title-head-modal">نتیجه تست</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p class="text-center text-secondary">
+                                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                                                چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
+                                                                بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                                                                برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
+                                                                هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت
+                                                                و سه درصد گذشته حال و آینده شناخت فراوان جامعه و متخصصان
+                                                                را می طلبد
+                                                            </p>
+
+                                                        </div>
+                                                        <div class="container d-flex justify-content-center">
+                                                            <hr class="text-secondary w-75">
+                                                        </div>
+                                                        <div
+                                                            class="modal-footer border-0 d-flex justify-content-center mb-3">
+                                                            <button type="button" class="custom-btn btn-5 "
+                                                                data-bs-dismiss="modal">خروج</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهارده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا در طول زندگی خود سابقه سکردن داشته اید؟
+                                        </h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره سیزده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">وضعیت دیابت شما در چه سطحی می باشد؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بدون دیابت
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-5">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -ابتدای بیماری
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-auto">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -دیابت
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-5">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره دوازده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا کلسترول بدن شما بالا می باشد؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره یازده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا از طریق آزمایش کلسترول بدن خود را در 5سال
+                                            اخیر بررسی کرده
+                                            اید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره ده</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا میزان چربی بدن شما بالا می باشد؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره نه</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا شما دارای بیماری کرونروی قلب هستید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هشت</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا د ر30 روز گذشته فعالیت بدنی داشته
+                                            اید؟(بدون احتساب شغل).
+                                        </h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هقت</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا میوه را در روز از یک وعده بیشتر مصرف میکنید؟
+                                        </h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره شش</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا سبزیجات را در روز بیشتر از یک وعده مصرف می
+                                            کنید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره پنج</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا در 12 ماه گذشته زمانی وجود داشته است که
+                                            شما نیاز به
+                                            مراجعه به پزشک داشته باشید اما به دلیل هزینه نتوانسته اید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهار</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا در راه رفتن یا بالا رفتن از پله ها
+                                            مشکل جدی دارید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -بله
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیر
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره سه</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">جنسسیت خود را مشخص کنید</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -خانم
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -آقا
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره دو</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">به طور کلی سطح سلامت بدن خود را در چه سطحی می
+                                            بینید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <label class="checkbox path">
+                                                    -خوب
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -خیلی خوب
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -متوسط
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                            <div class="grid me-4">
+                                                <label class="checkbox path">
+                                                    -ضعیف
+                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div id="Experiments" class="tabcontent body">
+                <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <h1 class="title">سوابق</h1>
+                            <p class="text-secondary mt-4">تست های گرفته شده.</p>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+                        </div>
+                    </div>
+                </header>
+                <hr class="text-secondary">
+                <!--Boxes designed to display test records...-->
+                <div class="body mt-5 p-5 rounded-3">
+                    <!--box designed to have no test records...-->
+                    <div class="row shadow-tobbox p-4" style="display: none;">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> آزمایش های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                onclick="openCity(event, 'New-test')">تست جدید</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-secondary text-center mt-5 mb-5">اخیرا هیچ تستی از شما گرفته نشده.</p>
+                        </div>
+                    </div>
+                    <!--box designed to display test records....-->
+                    <div class="container shadow-tobbox">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="widget blank no-padding">
+                                    <div class="panel panel-default work-progress-table">
+                                        <!-- Table -->
+                                        <table id="mytable" class="table responsive-m">
+                                            <thead>
+                                                <tr>
+                                                    <th class="title-head responsive-m">شماره</th>
+                                                    <th class="title-head">عنوان</th>
+                                                    <th class="title-head">تاریخ</th>
+                                                    <th class="title-head text-center" style="width:25%">درصد ابتلاء</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="responsive-m">1</td>
+                                                    <td>تست دیابت</td>
+                                                    <td>1401/10/13</td>
+                                                    <td>
+                                                        <div class="progress">
+                                                            <div style="width: 60%;" aria-valuemax="100"
+                                                                aria-valuemin="0" aria-valuenow="60" role="progressbar"
+                                                                class="red progress-bar">
+                                                                <span>60%</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--modal to display user information...-->
+            <div class="modal fade" id="exampleModale" tabindex="-1" aria-labelledby="exampleModalLabele"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-header mt-3 border-0 d-flex flex-wrap justify-content-center">
+                            <div class="position-relative">
+                                <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" alt="mdo" class="rounded-circle border"
+                                    width="150" height="150">
+                            </div>
+                        </div>
+                        <div class="modal-body mb-3">
+                            <h5 class="col-12 email-card text-secondary">amirabasghasemi2022</h5>
+                            <h5 class="col-12 email-card text-secondary">امیرعباس قاسمی</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'ticket/js/index.js' %}"></script>
+</body>
+
+</html>
