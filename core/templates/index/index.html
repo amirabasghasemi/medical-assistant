@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'account/css/index.css' %}">
+</head>
+  <body>
+<div class="body-form">
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h2 class="mb-4">ایجادحساب کاربری</h2>
+                <span>ازایمیل خودبرای ثبت نام استفاده کنید</span>
+                <input type="text" placeholder="نام ونام خانوادگی" />
+                <input type="email" placeholder="آدرس ایمیل" />
+                <input type="password" placeholder="رمز عبور" />
+                <input type="password" placeholder="تکراررمزعبور" />
+                <button>ثبت نام</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h2 class="mb-4">ورود</h2>
+                <span>به حساب کاربری خودواردشوید</span>
+                <input type="email" placeholder="ایمیل" />
+                <input type="password" placeholder="رمزعبور" />
+                <a href="#">رمزخودرافراموش کرده اید؟</a>
+                <button>ورود</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>خوش آمدید!</h1>
+                    <p>برای حفظ ارتباط با ما لطفا با اطلاعات شخصی خود وارد شوید</p>
+                    <button class="ghost" id="signIn">ورود</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2>ایجادحساب کاربری</h2>
+                    <p>مشخصات شخصی خود را وارد کنیدتادرمان راشروع کنیم</p>
+                    <button class="ghost" id="signUp">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="{% static 'account/js/index.js' %}"></script>
+</body>
+</html>
