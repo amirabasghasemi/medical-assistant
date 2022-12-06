@@ -101,7 +101,7 @@
                 <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a></li>
                 <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="#">تیکت ها</a></li>
 
-                <li class="list-group"><a>خروج</a></li>
+                <li class="list-group" data-bs-toggle="modal" data-bs-target="#exampleModal1"><a>خروج</a></li>
             </ul>
             <div class="note text-center">
                 <h3>کاربرگرامی</h3>
@@ -966,7 +966,7 @@
                             <p class="note-tab col-6"><i class="bi bi-shield-check"></i> آزمایش های اخیر</p>
                             <div class="col-6 d-flex justify-content-end text-center">
                                 <button class="custom-btn btn-13" style="width: auto;"
-                                onclick="openCity(event, 'New-test')">تست جدید</button>
+                                    onclick="openCity(event, 'New-test')">تست جدید</button>
                             </div>
                         </div>
                         <div>
@@ -1031,7 +1031,25 @@
                     </div>
                 </div>
             </div>
-            <!---->
+            <!--modal exit-->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content rounded-3 border-0 shadow">
+                        <div class="modal-header d-flex justify-content-center border-0">
+                            <h1 class="modal-title fs-5 text-secondary" id="exampleModalLabel">آیامیخواهیدازسایت خارج
+                                شوید؟</h1>
+                        </div>
+                        <hr class="note-tab m-3">
+                        <div class="modal-footer border-0">
+                            <button type="button" class="custom-btn btn-5 w-100">خروج ازسایت</button>
+                            <button type="button" class="custom-btn btn-13 w-100" data-bs-dismiss="modal">ادامه
+                                فعالیت</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </main>
 
