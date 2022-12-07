@@ -1,0 +1,79 @@
+ {% extends 'ticket/base.html' %}
+{% load static %}
+
+               {% block experiments_section %}
+<header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <h1 class="title">سوابق</h1>
+                            <p class="text-secondary mt-4">تست های گرفته شده.</p>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+                        </div>
+                    </div>
+                </header>
+                <hr class="text-secondary">
+                <!--Boxes designed to display test records...-->
+                <div class="body mt-5 p-5 rounded-3">
+                    <!--box designed to have no test records...-->
+                    <div class="row shadow-tobbox p-4" style="display: none;">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> تست های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openCity(event, 'New-test')">تست جدید</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-secondary text-center mt-5 mb-5">اخیرا هیچ تستی از شما گرفته نشده.</p>
+                        </div>
+                    </div>
+                    <!--box designed to display test records....-->
+                    <div class="container shadow-tobbox">
+                        <div class="row p-5">
+                            <div class="col-md-12">
+                                <div class="widget blank no-padding">
+                                    <div class="panel panel-default work-progress-table">
+                                        <div class="col-12 d-flex flex-nowrap">
+                                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> تست های اخیر
+                                            </p>
+                                            <div class="col-6 d-flex justify-content-end text-center">
+                                                <button class="custom-btn btn-13" style="width: auto;"
+                                                    onclick="openCity(event, 'New-test')">تست جدید</button>
+                                            </div>
+                                        </div>
+                                        <!-- Table -->
+                                        <table id="mytable" class="table mt-5">
+                                            <thead>
+                                                <tr>
+                                                    <th class="title-head responsive-m">شماره</th>
+                                                    <th class="title-head">عنوان</th>
+                                                    <th class="title-head">تاریخ</th>
+                                                    <th class="title-head text-center" style="width:25%">درصد ابتلاء</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="responsive-m">1</td>
+                                                    <td>تست دیابت</td>
+                                                    <td>1401/10/13</td>
+                                                    <td>
+                                                        <div class="progress">
+                                                            <div style="width: 60%;" aria-valuemax="100"
+                                                                aria-valuemin="0" aria-valuenow="60" role="progressbar"
+                                                                class="red progress-bar">
+                                                                <span>60%</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 {% endblock experiments_section %}
