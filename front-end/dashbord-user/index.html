@@ -80,11 +80,11 @@
     <!--header, menu, dashboard designed for size 1020px and above...-->
     <div class="site-wrap d-flex justify-content-center">
         <!--dashboard designed in size 1020...-->
-        <nav class="site-nav responsive-m">
+        <nav class="site-nav responsive-m shadow">
             <div class="name p-2">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                     aria-expanded="false">
-                    <img src="../img/61792-[Converted].jpg" alt="mdo" class="rounded-circle" width="40" height="40">
+                    <img src="../img/61792-[Converted].jpg" alt="mdo" class="rounded-circle m-0" width="40" height="40">
                     amirabasghasemi2022
                 </a>
                 <ul class="dropdown-menu text-small shadow border-0 rounded-3" data-popper-placement="bottom-end">
@@ -103,20 +103,20 @@
 
                 <li class="list-group" data-bs-toggle="modal" data-bs-target="#exampleModal1"><a>خروج</a></li>
             </ul>
-            <div class="note text-center">
+            <div class="note text-center p-2">
                 <h3>کاربرگرامی</h3>
-                <p class=" mt-3">جهت بالارفتن دقت وعملکردسایت،آزمایش های شما،باعث جمع آوری دیتاهای
+                <p class=" mt-3">جهت بالارفتن دقت وعملکردسایت، تست های شما،باعث جمع آوری دیتاهای
                     بیشترودقیقترخواهدشد.</p>
             </div>
 
         </nav>
         <!--main designed in all sizes with responsive...-->
-        <main id="body" class="dark-mode col-lg-10 col-12 shadow">
+        <main id="body" class="dark-mode col-lg-10 col-12">
             <!--dark mode code html ...
             <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
 -->
             <!--Designing the communication department with support...-->
-            <div id="profile" class="tabcontent body active">
+            <div id="profile" style="height: 100%;" class="tabcontent body active">
                 <header>
                     <div class="col-12 d-flex">
                         <div class="col-6">
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <!--Box design to display tickets...-->
-                    <div class="row shadow-tobbox mt-5 p-5">
+                    <div class="row shadow-tobbox mt-5 p-5 main-hight">
                         <div class="col-12 d-flex flex-nowrap">
                             <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
                             <div class="col-6 d-flex justify-content-end text-center">
@@ -197,272 +197,153 @@
                 </div>
                 <!--Box design for communication with support...-->
                 <div class="tabbox" id="creation">
-                    <div class="row shadow-tobbox mt-4 rounded-3 p-3">
-                        <div class="col-lg-12">
-                            <h4 class="note-tab">پشتیبانی</h4>
-                            <p class="text-secondary">پاسخگویی درسریع ترین زمان ممکن.</p>
-                        </div>
-                        <hr class="text-secondary">
-                        <div class="col-lg-12">
-                            <p class="note-tab">موضوع تیکت</p>
-                            <input class="col-12 rounded-2 input" type="text" placeholder="موضوع تیکت خودراواردکنید">
-                            <p class="note-tab mt-5">پیام</p>
-                            <textarea class="form-control col-12 rounded-2" aria-label="With textarea"
-                                placeholder="توضیحات مربوط به تیکت خودرادراین قسمت واردنمایید"></textarea>
-                            <div class="col-lg-12 d-flex flex-nowrap mt-5">
-                                <div class="col-6">
-                                    <p class="note-tab">قبل ازبارگذاری مجددصفحه،اطلاعات موردنظرراذخیره کنید.</p>
-                                </div>
-                                <div class="col-6 d-flex justify-content-end">
-                                    <button class="custom-btn btn-13">ارسال تیکت</button>
+                    <div class="row">
+                        <div class="mt-4 shadow-tobbox rounded-3 p-3">
+                            <div class="container mt-5">
+
+                                <div class="row  d-flex justify-content-center">
+
+                                    <div class="col-md-10 mb-5">
+
+                                        <div class="col-lg-12">
+                                            <h4 class="note-tab">پشتیبانی</h4>
+                                            <p class="text-secondary">پاسخگویی درسریع ترین زمان ممکن.</p>
+                                        </div>
+                                        <hr class="text-secondary">
+                                        <div class="col-lg-12">
+                                            <p class="note-tab">موضوع تیکت</p>
+                                            <input class="col-12 rounded-2 input" type="text"
+                                                placeholder="موضوع تیکت خودراواردکنید">
+                                            <p class="note-tab mt-5">پیام</p>
+                                            <textarea class="form-control col-12 rounded-2" aria-label="With textarea"
+                                                placeholder="توضیحات مربوط به تیکت خودرادراین قسمت واردنمایید"></textarea>
+                                            <div class="col-lg-12 d-flex flex-nowrap mt-5">
+                                                <div class="col-6">
+                                                    <p class="note-tab">قبل ازبارگذاری مجددصفحه،اطلاعات
+                                                        موردنظرراذخیره کنید.</p>
+                                                </div>
+                                                <div class="col-6 d-flex justify-content-end">
+                                                    <button class="custom-btn btn-13">ارسال تیکت</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--box designed to display support tickets...-->
-
-
-
-
-
-
-
-
-
-
-
-                
-                <div class="tabbox" id="Condition">
-                    <div class="row">
-                        <div class="mt-4 shadow-tobbox rounded-3 p-p3">
+                <div class="tabbox mb-5" id="Condition">
+                    <div class="row mt-5">
+                        <div class="mt-4 shadow-tobbox rounded-3 p-3">
                             <div class="container mt-5">
 
                                 <div class="row  d-flex justify-content-center">
-                    
-                                    <div class="col-md-8">
-                    
+
+                                    <div class="col-md-10 mb-5">
+
                                         <div class="headings d-flex justify-content-between align-items-center mb-3">
-                                            <h5>Unread comments(6)</h5>
-                    
-                                            <div class="buttons">
-                    
-                                                <span class="badge bg-white d-flex flex-row align-items-center">
-                                                    <span class="text-primary">Comments "ON"</span>
-                                                    <div class="form-check form-switch">
-                                                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                                      
+                                            <h5 class="note-tab"><i class="bi bi-headset fs-1"></i> پشتیبانی</h5>
+                                        </div>
+                                        <div class="card card-comment p-3 mt-2">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="../img/61792-[Converted].jpg" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2">امیرعباس قاسمی</span>
                                                     </div>
-                                                </span>
-                                                
+                                                    <div
+                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>دیابت</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>1401/7/1</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-1 p-3">
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
+                                                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                                                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+                                                        کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان
+                                                        جامعه و متخصصان را می طلبد.
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
                                             </div>
-                                            
                                         </div>
-                    
-                    
-                    
-                                        <div class="card card-comment p-3">
-                    
-                                            <div class="d-flex justify-content-between align-items-center">
-                    
-                                          <div class="user d-flex flex-row align-items-center">
-                    
-                                            <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2">
-                                            <span><small class="font-weight-bold text-primary">james_olesenn</small> <small class="font-weight-bold">Hmm, This poster looks cool</small></span>
-                                              
-                                          </div>
-                    
-                    
-                                          <small>2 days ago</small>
-                    
-                                          </div>
-                    
-                    
-                                          <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    
-                                            <div class="reply px-4">
-                                                <small>Remove</small>
-                                                <span class="dots"></span>
-                                                <small>Reply</small>
-                                                <span class="dots"></span>
-                                                <small>Translate</small>
-                                               
+
+
+
+
+
+
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="../img/2022-11-30_19h35_30.png" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2"><i class="bi bi-headset"></i> پشتیبانی</span>
+                                                    </div>
+                                                    <div
+                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>دیابت</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>1401/7/1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-3 p-3">
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
+                                                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                                                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+                                                        کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان
+                                                        جامعه و متخصصان را می طلبد.
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
                                             </div>
-                    
-                                            <div class="icons align-items-center">
-                    
-                                                <i class="fa fa-star text-warning"></i>
-                                                <i class="fa fa-check-circle-o check-icon"></i>
-                                                
-                                            </div>
-                                              
-                                          </div>
-                    
-                    
-                                            
                                         </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                                        <div class="card card-comment p-3 mt-2">
-                    
-                                            <div class="d-flex justify-content-between align-items-center">
-                    
-                                          <div class="user d-flex flex-row align-items-center">
-                    
-                                            <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2">
-                                            <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Loving your work and profile! </small></span>
-                                              
-                                          </div>
-                    
-                    
-                                          <small>3 days ago</small>
-                    
-                                          </div>
-                    
-                    
-                                          <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    
-                                            <div class="reply px-4">
-                                                <small>Remove</small>
-                                                <span class="dots"></span>
-                                                <small>Reply</small>
-                                                <span class="dots"></span>
-                                                <small>Translate</small>
-                                               
+
+
+
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="container p-4">
+                                                    <textarea class="w-75 rounded-4 textarea-input p-3" placeholder="متن خودراواردکنید..."></textarea>
+                                                <button class=""></button>
+                                                </div>
                                             </div>
-                    
-                                            <div class="icons align-items-center">
-                                                <i class="fa fa-check-circle-o check-icon text-primary"></i>
-                                                
-                                            </div>
-                                              
-                                          </div>
-                    
-                    
-                                            
                                         </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                                        <div class="card card-comment p-3 mt-2">
-                    
-                                            <div class="d-flex justify-content-between align-items-center">
-                    
-                                          <div class="user d-flex flex-row align-items-center">
-                    
-                                            <img src="https://i.imgur.com/0LKZQYM.jpg" width="30" class="user-img rounded-circle mr-2">
-                                            <span><small class="font-weight-bold text-primary">rashida_jones</small> <small class="font-weight-bold">Really cool Which filter are you using? </small></span>
-                                              
-                                          </div>
-                    
-                    
-                                          <small>3 days ago</small>
-                    
-                                          </div>
-                    
-                    
-                                          <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    
-                                            <div class="reply px-4">
-                                                <small>Remove</small>
-                                                <span class="dots"></span>
-                                                <small>Reply</small>
-                                                <span class="dots"></span>
-                                                <small>Translate</small>
-                                               
-                                            </div>
-                    
-                                            <div class="icons align-items-center">
-                                                <i class="fa fa-user-plus text-muted"></i>
-                                                <i class="fa fa-star-o text-muted"></i>
-                                                <i class="fa fa-check-circle-o check-icon text-primary"></i>
-                                                
-                                            </div>
-                                              
-                                          </div>
-                    
-                    
-                                            
-                                        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                                        <div class="card card-comment p-3 mt-2">
-                    
-                                            <div class="d-flex justify-content-between align-items-center">
-                    
-                                          <div class="user d-flex flex-row align-items-center">
-                    
-                                            <img src="https://i.imgur.com/ZSkeqnd.jpg" width="30" class="user-img rounded-circle mr-2">
-                                            <span><small class="font-weight-bold text-primary">simona_rnasi</small> <small class="font-weight-bold text-primary">@macky_lones</small> <small class="font-weight-bold text-primary">@rashida_jones</small> <small class="font-weight-bold">Thanks </small></span>
-                                              
-                                          </div>
-                    
-                    
-                                          <small>3 days ago</small>
-                    
-                                          </div>
-                    
-                    
-                                          <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    
-                                            <div class="reply px-4">
-                                                <small>Remove</small>
-                                                <span class="dots"></span>
-                                                <small>Reply</small>
-                                                <span class="dots"></span>
-                                                <small>Translate</small>
-                                               
-                                            </div>
-                    
-                                            <div class="icons align-items-center">
-                                               
-                                                <i class="fa fa-check-circle-o check-icon text-primary"></i>
-                                                
-                                            </div>
-                                              
-                                          </div>
-                    
-                    
-                                            
-                                        </div>
-                    
-                    
-                                        
+
                                     </div>
-                                    
+
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
             <div id="New-test" class="tabcontent body">
                 <header>
                     <div class="col-12 d-flex">
@@ -1207,7 +1088,7 @@
                     <!--box designed to have no test records...-->
                     <div class="row shadow-tobbox p-4" style="display: none;">
                         <div class="col-12 d-flex flex-nowrap">
-                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> آزمایش های اخیر</p>
+                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> تست های اخیر</p>
                             <div class="col-6 d-flex justify-content-end text-center">
                                 <button class="custom-btn btn-13" style="width: auto;"
                                     onclick="openCity(event, 'New-test')">تست جدید</button>
@@ -1219,12 +1100,20 @@
                     </div>
                     <!--box designed to display test records....-->
                     <div class="container shadow-tobbox">
-                        <div class="row">
+                        <div class="row p-5">
                             <div class="col-md-12">
                                 <div class="widget blank no-padding">
                                     <div class="panel panel-default work-progress-table">
+                                        <div class="col-12 d-flex flex-nowrap">
+                                            <p class="note-tab col-6"><i class="bi bi-shield-check"></i> تست های اخیر
+                                            </p>
+                                            <div class="col-6 d-flex justify-content-end text-center">
+                                                <button class="custom-btn btn-13" style="width: auto;"
+                                                    onclick="openCity(event, 'New-test')">تست جدید</button>
+                                            </div>
+                                        </div>
                                         <!-- Table -->
-                                        <table id="mytable" class="table responsive-m">
+                                        <table id="mytable" class="table mt-5">
                                             <thead>
                                                 <tr>
                                                     <th class="title-head responsive-m">شماره</th>
