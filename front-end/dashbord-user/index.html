@@ -46,34 +46,23 @@
         <div class="offcanvas offcanvas-end border-0 shadow" tabindex="-1" id="offcanvasNavbarLight"
             aria-labelledby="offcanvasNavbarLightLabel" aria-modal="true" role="dialog">
             <div class="offcanvas-header">
-                <div class="name m-0 p-0">
-                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false">
-                        <img src="../img/61792-[Converted].jpg" alt="mdo" class="rounded-circle" width="40" height="40">
-                        amirabasghasemi2022
-                    </a>
-                    <ul class="dropdown-menu text-small shadow border-0 rounded-3" style="width: 150px;"
-                        data-popper-placement="bottom-end">
-                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
-                        <li><a class="dropdown-item" href="#">تنظیمات</a></li>
-                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                data-bs-target="#exampleModale">پروفایل</a></li>
-                        <li><a class="dropdown-item" href="#">خروج</a></li>
-                    </ul>
+                <div class="name">
+                    
                 </div>
             </div>
             <div class="offcanvas-body">
                 <nav class="site-nav">
-                    <ul class="m-0 p-0">
+                    <ul class=" mt-4 p-0">
                         <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="#">تیکت
                                 ها</a></li>
                         <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
                         </li>
                         <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a>
                         </li>
-                        <li class="list-group"><a>خروج</a></li>
+                        <li class="list-group"  data-bs-toggle="modal" data-bs-target="#exampleModal1"><a>خروج</a></li>
                     </ul>
                 </nav>
+               
             </div>
         </div>
     </header>
@@ -138,10 +127,6 @@
                             href="#0">
                             ارسال تیکت جدید
                         </a>
-                        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'Condition')"
-                            href="#0">
-                            مشاهده وضعیت
-                        </a>
                     </nav>
                 </header>
                 <!--The box is designed for the ticket section to be empty...-->
@@ -174,7 +159,7 @@
                                     <th class="title-head">موضوع تیکت</th>
                                     <th class="title-head">تاریخ</th>
                                     <th class="title-head" style="width:25%">وضعیت بررسی</th>
-                                    <th class="title-head text-center">مشاهده وضعیت</th>
+                                    <th class="title-head text-center">مشاهده</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -187,8 +172,8 @@
                                         <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>
                                     </td>
                                     <td class="text-center position-relative">
-                                        <i class="bi bi-card-text fs-4 icon-table" style="display: none;"></i>
-                                        <i class="bi bi-clock-history fs-4 icon-table text-warning"></i>
+                                        <i class="bi bi-card-text fs-4 icon-table text-center"
+                                            onclick="openbox(event, 'Condition')"></i>
                                     </td>
                                 </tr>
                             </tbody>
@@ -291,13 +276,19 @@
                                         <div class="card card-comment p-3 mt-4">
                                             <div class="d-flex justify-content-between flex-wrap align-items-center">
                                                 <div class="user d-flex col-12 align-items-center">
-                                                    <div class="col-6">
+                                                    <div class="col-4">
                                                         <img src="../img/2022-11-30_19h35_30.png" width="50"
                                                             class="user-img border rounded-circle mr-2">
-                                                        <span class="text-secondary me-2"><i class="bi bi-headset"></i> پشتیبانی</span>
+                                                        <span class="text-secondary me-2"><i class="bi bi-headset"></i>
+                                                            پشتیبانی</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h3 class="note-tab text-center responsive-m">
+                                                            دکترپلاس
+                                                        </h3>
                                                     </div>
                                                     <div
-                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        class="action col-4 note-tab d-flex flex-wrap mt-2 align-items-center">
                                                         <div class="d-flex justify-content-end col-12 m-0">
                                                             <p>موضوع تیکت:</p>
                                                             <p>دیابت</p>
@@ -328,9 +319,11 @@
 
                                         <div class="card card-comment p-3 mt-4">
                                             <div class="d-flex justify-content-between flex-wrap align-items-center">
-                                                <div class="container p-4">
-                                                    <textarea class="w-75 rounded-4 textarea-input p-3" placeholder="متن خودراواردکنید..."></textarea>
-                                                <button class=""></button>
+                                                <div
+                                                    class="container p-4 d-flex justify-content-around align-items-center">
+                                                    <textarea class="w-75 rounded-4 textarea-input p-3"
+                                                        placeholder="متن خودراواردکنید..."></textarea>
+                                                    <button class="custom-btn btn-13">ارسال</button>
                                                 </div>
                                             </div>
                                         </div>
