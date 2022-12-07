@@ -14,7 +14,6 @@ body {
   height: 100vh;
   width: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
 a {
@@ -26,11 +25,16 @@ a {
 }
 
 .site-nav {
-  background: #8EC3B0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  right: 0;
   color: white;
-  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
   display: flex;
-  width: 280px;
+  width: 260px;
+  background-color: #8EC3B0;
   flex-direction: column;
 }
 
@@ -121,13 +125,11 @@ a {
   width: calc(100% - 3rem);
 }
 
-
 main {
-  border-top-right-radius: 2rem;
   background: white;
   margin-right: -2rem;
   position: relative;
-  height: 100vh;
+  margin-right: 250px;
 }
 
 main>.tabcontent {
@@ -429,7 +431,8 @@ main.dark-mode p,a,h1,h2,h3,h5,h6 {
   position: absolute;
   cursor: pointer;
 }
-.carousel-control-prev{
+
+.carousel-control-prev {
   background-color: #9ED5C5;
   margin-right: 300px !important;
   width: 40px;
@@ -437,23 +440,27 @@ main.dark-mode p,a,h1,h2,h3,h5,h6 {
   border-radius: 50px;
   margin-top: 150px;
 }
-.carousel-control-next{
+
+.carousel-control-next {
   background-color: #9ED5C5;
   width: 40px;
   height: 40px;
   border-radius: 50px;
   margin-top: 150px;
 }
+
 .checkbox {
   --border-active: #03c266;
   position: relative;
 }
+
 .checkbox input,
 .checkbox svg {
   width: 21px;
   height: 21px;
   display: block;
 }
+
 .checkbox input {
   position: relative;
   outline: none;
@@ -466,13 +473,16 @@ main.dark-mode p,a,h1,h2,h3,h5,h6 {
   transition: box-shadow 0.3s;
   box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
 }
+
 .checkbox input:hover {
   --s: 2px;
   --b: var(--border-hover);
 }
+
 .checkbox input:checked {
   --b: var(--border-active);
 }
+
 .checkbox svg {
   pointer-events: none;
   fill: none;
@@ -487,43 +497,54 @@ main.dark-mode p,a,h1,h2,h3,h5,h6 {
   height: 21px;
   transform: scale(var(--scale, 1)) translateZ(0);
 }
+
 .checkbox.path input:checked {
   --s: 2px;
   transition-delay: 0.4s;
 }
-.checkbox.path input:checked + svg {
+
+.checkbox.path input:checked+svg {
   --a: 16.1 86.12;
   --o: 102.22;
 }
+
 .checkbox.path svg {
   stroke-dasharray: var(--a, 86.12);
   stroke-dashoffset: var(--o, 86.12);
   transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
 }
+
 .checkbox.bounce {
   --stroke: var(--tick);
 }
+
 .checkbox.bounce input:checked {
   --s: 11px;
 }
-.checkbox.bounce input:checked + svg {
+
+.checkbox.bounce input:checked+svg {
   -webkit-animation: bounce 0.4s linear forwards 0.2s;
-          animation: bounce 0.4s linear forwards 0.2s;
+  animation: bounce 0.4s linear forwards 0.2s;
 }
+
 .checkbox.bounce svg {
   --scale: 0;
 }
-.line-card{
+
+.line-card {
   color: #8EC3B0;
   height: 3px !important;
 }
+
 @-webkit-keyframes bounce {
   50% {
     transform: scale(1.2);
   }
+
   75% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
@@ -533,136 +554,238 @@ main.dark-mode p,a,h1,h2,h3,h5,h6 {
   50% {
     transform: scale(1.2);
   }
+
   75% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 .body-chek {
-	font-family: yekan;
-    -webkit-animation: theme 21s linear infinite;
-            animation: theme 21s linear infinite;
+  font-family: yekan;
+  -webkit-animation: theme 21s linear infinite;
+  animation: theme 21s linear infinite;
+}
+
+.body-chek:after,
+body:before {
+  content: "";
+  display: none;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  width: 100vmax;
+  height: 100vmax;
+  background: rgba(0, 0, 0, 0.05);
+  -webkit-animation: background 90s linear infinite;
+  animation: background 90s linear infinite;
+}
+
+.body-chek:after {
+  left: 15vw;
+}
+
+.body-chek:before {
+  right: 15vw;
+  -webkit-animation-delay: -30s;
+  animation-delay: -30s;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes theme {
+  0% {
+    background: #74C390;
   }
-  .body-chek:after, body:before {
-    content: "";
-    display: none;
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    width: 100vmax;
-    height: 100vmax;
-    background: rgba(0, 0, 0, 0.05);
-    -webkit-animation: background 90s linear infinite;
-            animation: background 90s linear infinite;
+
+  16% {
+    background: #5DBDB6;
   }
-  .body-chek:after {
-    left: 15vw;
+
+  33% {
+    background: #DEF5E5;
   }
-  .body-chek:before {
-    right: 15vw;
-    -webkit-animation-delay: -30s;
-            animation-delay: -30s;
-    animation-direction: reverse;
+
+  100% {
+    background: #74C390;
   }
-  
-  @-webkit-keyframes theme {
-    0% {
-      background: #74C390;
-    }
-    16% {
-      background: #5DBDB6;
-    }
-    33% {
-      background: #DEF5E5;
-    }
-    100% {
-      background: #74C390;
-    }
+}
+
+@keyframes theme {
+  0% {
+    background: #74C390;
   }
-  
-  @keyframes theme {
-    0% {
-      background: #74C390;
-    }
-    16% {
-      background: #5DBDB6;
-    }
-    33% {
-      background: #DEF5E5;
-    }
-    100% {
-      background: #74C390;
-    }
+
+  16% {
+    background: #5DBDB6;
   }
-  @-webkit-keyframes background {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+
+  33% {
+    background: #DEF5E5;
   }
-  @keyframes background {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+
+  100% {
+    background: #74C390;
   }
-  /* 6 */
-  .btn-5 {
-    width: 130px;
-    height: 40px;
-    line-height: 42px;
-    padding: 0;
-    border: none;
-    background-color: #4dccc6;
-background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+}
+
+@-webkit-keyframes background {
+  0% {
+    transform: rotate(0deg);
   }
-  .btn-5:hover {
-   color: #4dccc6;
-    background: transparent;
-     box-shadow:none;
+
+  100% {
+    transform: rotate(360deg);
   }
-  .btn-5:before,
-  .btn-5:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:3px;
-    width:0;
-    background-color: #4dccc6;
-    background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
-    box-shadow:
-     -1px -1px 5px 0px #fff,
-     7px 7px 20px 0px #0003,
-     4px 4px 5px 0px #0002;
-    transition:400ms ease all;
+}
+
+@keyframes background {
+  0% {
+    transform: rotate(0deg);
   }
-  .btn-5:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
+
+  100% {
+    transform: rotate(360deg);
   }
-  .btn-5:hover:before,
-  .btn-5:hover:after{
-    width:100%;
-    transition:800ms ease all;
-  }
-  
-  .title-head-modal{
-    color: #8EC3B0;
-  }
-.offcanvas-end{
+}
+
+/* 6 */
+.btn-5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+}
+
+.btn-5:hover {
+  color: #4dccc6;
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.btn-5:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.title-head-modal {
+  color: #8EC3B0;
+}
+
+.offcanvas-end {
   border-top-left-radius: 50px;
   background-color: #8EC3B0;
   width: 250px !important;
 }
+
+.card-comment {
+  border: 2px solid #DEF5E5;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card-comment:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.dots {
+
+  height: 4px;
+  width: 4px;
+  margin-bottom: 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge {
+
+  padding: 7px;
+  padding-right: 9px;
+  padding-left: 16px;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.user-img {
+
+  margin-top: 4px;
+}
+
+.check-icon {
+
+  font-size: 17px;
+  color: #c3bfbf;
+  top: 1px;
+  position: relative;
+  margin-left: 3px;
+}
+
+.form-check-input {
+  margin-top: 6px;
+  margin-left: -24px !important;
+  cursor: pointer;
+}
+
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+.textarea-input{
+  transition: 0.3s;
+ color: #626262;
+  outline:0;
+  border: 1px solid #dfdfdf;
+}
+.textarea-input:hover{
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;  
+}
+.offcanvas-end{
+  width: 280px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
