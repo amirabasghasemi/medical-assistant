@@ -8,6 +8,7 @@ class Ticket(models.Model):
         (1, 'تکمیل شده')
     )
     title = models.TextField(max_length=128)
+    text_ticket = models.TextField(max_length=512)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     status = models.SmallIntegerField(choices=status_choice, default=0)
     unread = models.BooleanField()
