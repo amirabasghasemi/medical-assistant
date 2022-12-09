@@ -1,9 +1,9 @@
 from django.urls import path
 
-from ticket.views import ticket, test,experiment
+from ticket.views import ticket, recent_tickets
 
 urlpatterns = [
     path('', ticket, name="ticket"),
-    path('#0', test, name="test"),
-    path('#', experiment, name="experiment"),
+    path('recent-tickets', recent_tickets, name="recent-tickets"),
+    # path('#recent-tickets/<int:ticket_id>', ticket_by_id, name='ticket_by_id'),
 ]
