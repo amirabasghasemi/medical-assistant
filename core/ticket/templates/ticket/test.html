@@ -1,13 +1,7 @@
 {% extends 'ticket/base.html' %}
 {% load static %}
 
-{% block test_section %}
-                <header>
-                    <div class="col-12 d-flex">
-                        <div class="col-6">
-                            <h1 class="title">تست جدید</h1>
-                            <p class="text-secondary mt-4">دکترپلاس همراه همیشگی شما...</p>
-                        </div>
+{% block tests_section %}
                         <div class="col-6 d-flex justify-content-end">
                             <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
                         </div>
@@ -23,6 +17,7 @@
                             <div class="carousel-item active mt-2 p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
+
                                         <div class="col-6 mt-3 text-secondary">سوال شماره یک</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
@@ -719,7 +714,6 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-
                     </div>
                 </div>
-  {% endblock test_section %}
+  {% endblock tests_section %}
