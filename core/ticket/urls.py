@@ -1,7 +1,9 @@
 from django.urls import path
 
-from ticket.views import dash_board
+from ticket.views import ticket, recent_tickets
 
 urlpatterns = [
-    path('', dash_board, name="dashboard"),
+    path('', ticket, name="ticket"),
+    path('recent-tickets', recent_tickets, name="recent-tickets"),
+    # path('#recent-tickets/<int:ticket_id>', ticket_by_id, name='ticket_by_id'),
 ]

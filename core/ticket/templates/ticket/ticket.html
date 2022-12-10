@@ -1,14 +1,7 @@
 {% extends 'ticket/base.html' %}
 {% load static %}
 
-{% block ticket_section %}
-<div id="profile" style="height: 100%;" class="tabcontent body active">
-                <header>
-                    <div class="col-12 d-flex">
-                        <div class="col-6">
-                            <div class="breadcrumbs">
-                                <a class="nav-link link-secondary" href="#0/">ارتباط با پشتیبانی</a>
-                            </div>
+{% block tickets_section %}
                             <h1 class="title">تیکت ها</h1>
                         </div>
                         <div class="col-6 d-flex justify-content-end">
@@ -17,7 +10,7 @@
                     </div>
                     <nav class="nav-tabs" id="nav-tabs">
                         <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
-                            href="#0">
+                            href="recent-tickets">
                             تیکت های اخیر
                         </a>
                         <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')"
@@ -30,7 +23,8 @@
                 <div class="tabbox active" id="before">
                     <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
                         <div class="col-12 d-flex flex-nowrap">
-                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <p class="note-tab col-6">
+                                <i class="bi bi-box-arrow-right"></i>تیکت های اخیر</p>
                             <div class="col-6 d-flex justify-content-end text-center">
                                 <button class="custom-btn btn-13" style="width: auto;"
                                     onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
@@ -43,13 +37,14 @@
                     <!--Box design to display tickets...-->
                     <div class="row shadow-tobbox mt-5 p-5 main-hight">
                         <div class="col-12 d-flex flex-nowrap">
-                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <p class="note-tab col-6">
+                                <i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
                             <div class="col-6 d-flex justify-content-end text-center">
                                 <button class="custom-btn btn-13" style="width: auto;"
                                     onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
                             </div>
                         </div>
-                        <table class="table text-secondary mt-5">
+                        <table class="table text-secondary mt-5" id="#recent-tickets">
                             <thead>
                                 <tr>
                                     <th class="title-head">شماره</th>
@@ -61,18 +56,26 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>حساب کاربری</td>
-                                    <td>1401/10/12</td>
-                                    <td>
-                                        <p class="text-warning text-table-alert">در حال بررسی ...</p>
-                                        <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>
-                                    </td>
-                                    <td class="text-center position-relative">
+                                {% for ticket in all_tickets %}
+                                         <tr>
+                                             <td><a href="/#recent-tickets/{{ticket.id}}">{{ ticket.id }}</a></td>
+                                             <td>{{ticket.title}}</td>
+                                             <td>{{ticket.created_at}}</td>
+                                             <td>{{ticket.status}}</td>
+                                          <td class="text-center position-relative">
                                         <i class="bi bi-card-text fs-4 icon-table text-center"
                                             onclick="openbox(event, 'Condition')"></i>
-                                    </td>
-                                </tr>
+                                          </td>
+                                    </tr>
+                                {% endfor %}
+
+{#                                    <td>1</td>#}
+{#                                    <td>حساب کاربری</td>#}
+{#                                    <td>1401/10/12</td>#}
+{#                                    <td>#}
+{#                                        <p class="text-warning text-table-alert">در حال بررسی ...</p>#}
+{#                                        <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>#}
+{#                                    </td>#}
                             </tbody>
                         </table>
                     </div>
@@ -231,6 +234,5 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-{% endblock ticket_section %}
+{% endblock tickets_section %}

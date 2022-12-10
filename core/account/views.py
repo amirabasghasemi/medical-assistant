@@ -18,7 +18,7 @@ def sing_up(request):
         return redirect('register')
     else:
         form = UserRegisterForm()
-        return render(request, 'home/register.html', context={'form': form})
+        return render(request, 'ticket/base.html', context={'form': form})
 
 
 @login_required
