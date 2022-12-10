@@ -7,7 +7,7 @@ def ticket(request):
 
 
 def recent_tickets(request):
-    all_tickets = TicketModel.objects.order_by('-created_at')
+    all_tickets = TicketModel.objects.all().order_by('-created_at')
     return render(request, 'ticket/ticket.html', {'all_tickets': all_tickets})
 
 
