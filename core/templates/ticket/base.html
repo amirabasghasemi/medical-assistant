@@ -37,10 +37,10 @@
                         <img src="{% static 'ticket/img/61792-[Converted].jpg' %}" alt="mdo" class="rounded-circle border"
                              width="40" height="40">
                     </a>
-
+    <!--plus icon next to logo designed for mobile and tablet...-->
                     <ul class="dropdown-menu text-small shadow border-0 rounded-3" style="width: 150px;"
                         data-popper-placement="bottom-end">
-                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="{% url 'test' %}">تست جدید +</a></li>
                         <li><a class="dropdown-item" href="#">تنظیمات</a></li>
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
                                 data-bs-target="#exampleModale">پروفایل</a></li>
@@ -63,15 +63,15 @@
                 <nav class="site-nav">
                     <ul class=" mt-4 p-0">
 
-                        <li class="list-group tablinks active" onclick="openCity(event, 'profile')">
-                            <a href="#">تیکت ها</a>
+                        <li class="list-group tablinks" onclick="openCity(event, 'profile')">
+                            <a href="{% url 'ticket' %}">تیکت ها</a>
                         </li>
 
                         <li class="list-group tablinks" onclick="openCity(event, 'New-test')">
-                            <a href="#0">تست جدید</a>
+                            <a href="{% url 'test' %}">تست جدید</a>
                         </li>
                         <li class="list-group tablinks" onclick="openCity(event, 'Experiments')">
-                            <a href="#0">سوابق</a>
+                            <a href="{% url 'experiment' %}">سوابق</a>
                         </li>
                         <li class="list-group"  data-bs-toggle="modal" data-bs-target="#exampleModal1">
                             <a>خروج</a>
@@ -98,7 +98,7 @@
                 </a>
 
                 <ul class="dropdown-menu text-small shadow border-0 rounded-3" data-popper-placement="bottom-end">
-                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="{% url 'test' %}">تست جدید +</a></li>
                     <li><a class="dropdown-item" href="#">تنظیمات</a></li>
                     <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
                             data-bs-target="#exampleModale">پروفایل</a></li>
@@ -108,13 +108,13 @@
             </div>
             <ul class="p-1">
                 <li class="list-group tablinks" onclick="openCity(event, 'New-test')">
-                    <a href="#0">تست جدید</a>
+                    <a href="{% url 'test' %}">تست جدید</a>
                 </li>
                 <li class="list-group tablinks" onclick="openCity(event, 'Experiments')">
-                    <a href="#0">سوابق</a>
+                    <a href="{% url 'experiment' %}">سوابق</a>
                 </li>
-                <li class="list-group tablinks active" onclick="openCity(event, 'profile')">
-                    <a href="#">تیکت ها</a>
+                <li class="list-group tablinks" onclick="openCity(event, 'profile')">
+                    <a href="{% url 'ticket' %}">تیکت ها</a>
                 </li>
 
                 <li class="list-group" data-bs-toggle="modal" data-bs-target="#exampleModal1">
@@ -136,34 +136,27 @@
 -->
             <!--Designing the communication department with support...-->
             <div id="profile" style="height: 100%;" class="tabcontent body active">
-
-                <header>
-                    <div class="col-12 d-flex">
-                        <div class="col-6">
-                            <div class="breadcrumbs">
-                                <a class="nav-link link-secondary" href="#0/">ارتباط با پشتیبانی</a>
-                            </div>
-                            {% block tickets_section %}
-                            {% endblock tickets_section %}
-                        </div>
-                    </div>
-                </header>
-
+                {% block tickets_section %}
+                {% endblock tickets_section %}
+            </div>
                 <div id="New-test" class="tabcontent body">
-                 <header>
-                    <div class="col-12 d-flex">
-                        <div class="col-6">
-                            <h1 class="title">تست جدید</h1>
-                            <p class="text-secondary mt-4">دکترپلاس همراه همیشگی شما...</p>
-                        </div>
+
                      {% block tests_section %}
                      {% endblock tests_section %}
                     </div>
-                 </header>
 
 
             <div id="Experiments" class="tabcontent body">
-
+             <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <h1 class="title">سوابق</h1>
+                            <p class="text-secondary mt-4">تست های گرفته شده.</p>
+                        </div>
+                {% block experiments_section %}
+                {% endblock experiments_section %}
+            </div>
+             </header>
             </div>
             <!--modal to display user information...-->
             <div class="modal fade" id="exampleModale" tabindex="-1" aria-labelledby="exampleModalLabele"
@@ -202,7 +195,6 @@
                 </div>
             </div>
                 </div>
-            </div>
         </main>
     </div>
 
@@ -213,5 +205,4 @@
         crossorigin="anonymous"></script>
     <script src="{% static 'ticket/js/index.js' %}"></script>
 </body>
-
 </html>

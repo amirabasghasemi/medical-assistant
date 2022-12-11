@@ -2,38 +2,46 @@
 {% load static %}
 
 {% block tickets_section %}
-                            <h1 class="title">تیکت ها</h1>
-                        </div>
-                        <div class="col-6 d-flex justify-content-end">
-                            <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
-                        </div>
-                    </div>
-                    <nav class="nav-tabs" id="nav-tabs">
-                        <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
-                            href="recent-tickets">
-                            تیکت های اخیر
-                        </a>
-                        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')"
-                            href="#0">
-                            ارسال تیکت جدید
-                        </a>
-                    </nav>
-                </header>
-                <!--The box is designed for the ticket section to be empty...-->
-                <div class="tabbox active" id="before">
-                    <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
-                        <div class="col-12 d-flex flex-nowrap">
-                            <p class="note-tab col-6">
-                                <i class="bi bi-box-arrow-right"></i>تیکت های اخیر</p>
-                            <div class="col-6 d-flex justify-content-end text-center">
-                                <button class="custom-btn btn-13" style="width: auto;"
-                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+      <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <div class="breadcrumbs">
+                                <a class="nav-link link-secondary" href="#0/">ارتباط با پشتیبانی</a>
                             </div>
-                        </div>
+
+    <h1 class="title">تیکت ها</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+    </div>
+    </div>
+    <nav class="nav-tabs" id="nav-tabs">
+        <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
+           href="{% url 'recent-tickets' %}">
+                            تیکت های اخیر
+        </a>
+        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')" href="#">
+            ارسال تیکت جدید
+        </a>
+    </nav>
+    </header>
+
+    <!--The box is designed for the ticket section to be empty...-->
+    <div class="tabbox active" id="before">
+        <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
+            <div class="col-12 d-flex flex-nowrap">
+                <p class="note-tab col-6">
+                    <i class="bi bi-box-arrow-right"></i>تیکت های اخیر</p>
+                <div class="col-6 d-flex justify-content-end text-center">
+                    <button class="custom-btn btn-13" style="width: auto;"
+                            onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                </div>
+                </div>
                         <div>
                             <p class="text-secondary text-center mt-5 mb-5">هیچ تیکت پشتیبانی برای نمایش وجود ندارد.</p>
                         </div>
                     </div>
+
                     <!--Box design to display tickets...-->
                     <div class="row shadow-tobbox mt-5 p-5 main-hight">
                         <div class="col-12 d-flex flex-nowrap">
@@ -44,7 +52,8 @@
                                     onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
                             </div>
                         </div>
-                        <table class="table text-secondary mt-5" id="#recent-tickets">
+                    </div>
+                        <table class="table text-secondary mt-5">
                             <thead>
                                 <tr>
                                     <th class="title-head">شماره</th>
@@ -55,10 +64,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
                                 {% for ticket in all_tickets %}
                                          <tr>
-                                             <td><a href="/#recent-tickets/{{ticket.id}}">{{ ticket.id }}</a></td>
+                                             <td><a href="{% url 'recent-tickets' %}{{ticket.id}}">{{ ticket.id }}</a></td>
                                              <td>{{ticket.title}}</td>
                                              <td>{{ticket.created_at}}</td>
                                              <td>{{ticket.status}}</td>
@@ -234,5 +242,7 @@
                         </div>
                     </div>
                 </div>
-
+ </div>
+                    </div>
+                </header>
 {% endblock tickets_section %}
