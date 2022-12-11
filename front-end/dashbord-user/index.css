@@ -70,7 +70,8 @@ a {
 
 .site-nav ul li a:hover,
 .site-nav ul li a:focus {
-  color: #717783;
+  color: #717783 !important;
+  cursor: pointer;
 }
 
 .site-nav ul li.active>a {
@@ -775,7 +776,9 @@ body:before {
 .offcanvas-end{
   width: 280px !important;
 }
-
+.link:hover{
+color: #717783 !important;
+}
 
 
 
