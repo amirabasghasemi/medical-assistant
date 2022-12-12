@@ -2,46 +2,58 @@
 {% load static %}
 
 {% block tests_section %}
-                        <div class="col-6 d-flex justify-content-end">
-                            <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
-                        </div>
-                    </div>
+     <header>
 
-                </header>
-                <hr class="text-secondary">
-                <!--Designing test questions...-->
-                <div class=" body body-chek rounded-5 shadow-tobbox p-2 mt-5" style="height: 50vh;">
-                    <div id="carouselExampleCaptions" style="height: 200px;" class="carousel slide"
-                        data-bs-ride="false">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active mt-2 p-5">
-                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
-                                    <div class="card-header d-flex bg-white border-0">
+         <div class="col-12 d-flex">
+            <div class="col-6">
+                <h1 class="title">تست جدید</h1>
+                <p class="text-secondary mt-4">دکترپلاس همراه همیشگی شما...</p>
+            </div>
+             <div class="col-6 d-flex justify-content-end">
+                 <img src="{% static 'ticket/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+             </div>
+         </div>
 
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره یک</div>
-                                        <div class="col-6 justify-content-end d-flex"><img
-                                                src="{% static 'ticket/logo/61792-[Converted].png' %}" style="height: 50px;" alt=""
-                                                srcset=""></div>
-                                    </div>
-                                    <div class="container">
-                                        <hr class="line-card">
-                                    </div>
-                                    <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا در طول زندگی خود حداقل 100 نخ سیگار
-                                            کشیده اید؟</h6>
-                                        <div class="d-flex mt-4">
-                                            <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
+         <hr class="text-secondary">
+         <!--Designing test questions...-->
+         <div class=" body body-chek rounded-5 shadow-tobbox p-2 mt-5" style="height: 50vh;">
+             <div id="carouselExampleCaptions" style="height: 200px;" class="carousel slide" data-bs-ride="false">
+                 <div class="carousel-inner">
+                     <div class="carousel-item active mt-2 p-5">
+                         <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                             <div class="card-header d-flex bg-white border-0">
+
+                                 <div class="col-6 mt-3 text-secondary">سوال شماره یک</div>
+                                 <div class="col-6 justify-content-end d-flex">
+                                     <img src="{% static 'ticket/logo/61792-[Converted].png' %}"
+                                          style="height: 50px;" alt="" srcset="">
+                                 </div>
+
+                             </div>
+
+                             <div class="container">
+                                 <hr class="line-card">
+                             </div>
+
+                             <div class="card-body">
+                                 <h6 class="card-title text-secondary">
+                                     آیا در طول زندگی خود حداقل 100 نخ سیگار
+                                            کشیده اید؟
+                                 </h6>
+                                 <div class="d-flex mt-4">
+                                     <div class="grid">
+                                         <label class="checkbox path">
+                                             -بله
+                                             <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                             <svg viewBox="0 0 21 21">
+                                                 <path
+                                                         d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                 </path>
+                                             </svg>
+                                         </label>
+                                     </div>
+
+                                     <div class="grid me-4">
                                                 <label class="checkbox path">
                                                     -خیر
                                                     <input type="checkbox" class="border-0 opacity-0 ms-4">
@@ -716,4 +728,5 @@
                         </button>
                     </div>
                 </div>
+
   {% endblock tests_section %}
