@@ -890,3 +890,17 @@ color: #717783 !important;
         display: inline-block;
     }
 }
+/*style css chart pie shadow bottum ...*/
+.shadow-pie{
+width: 50%;
+height: 8px;
+background-color: #9595955d;
+border-radius: 100% !important;
+}
+.chart{
+  transition: 0.8s;
+}
+.chart:hover{
+  transform: scale( 1.1 , 1.1 );
+  cursor: pointer;
+ }

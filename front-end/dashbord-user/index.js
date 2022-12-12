@@ -13,7 +13,7 @@ function openCity(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 //Codes of the tickets section for tabbox...=>
-function openbox(evt, boxName) {
+function openbox(evt, boxname) {
   var i, tabbox, tabbar;
   tabbox = document.getElementsByClassName("tabbox");
   for (i = 0; i < tabbox.length; i++) {
@@ -23,7 +23,7 @@ function openbox(evt, boxName) {
   for (i = 0; i < tabbar.length; i++) {
     tabbar[i].className = tabbar[i].className.replace(" active", "");
   }
-  document.getElementById(boxName).style.display = "block";
+  document.getElementById(boxname).style.display = "block";
   evt.currentTarget.className += " active";
 }
 /*dark mode javascript code...
@@ -34,3 +34,20 @@ function toggleDarkLight() {
 }
 */
 //............................
+//chart pie code javascript test...
+var xValues = ["درصدابتلاء", "بدون دیابت"];
+var yValues = [25, 75];
+var barColors = [
+  "#9ED5C5",
+  "#11ffbd",
+];
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+});
