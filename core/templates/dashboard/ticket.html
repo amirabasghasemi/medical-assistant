@@ -1,0 +1,270 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="profile" style="height: 100%;" class="tabcontent body active">
+                <header>
+                    <div class="col-12 d-flex">
+                        <div class="col-6">
+                            <div class="breadcrumbs">
+                                <a class="nav-link link-secondary" href="#0/">ارتباط باپشتیبانی</a>
+                            </div>
+                            <h1 class="title">تیکت ها</h1>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <img src="{% static 'ticket/img/logo/61792-[Converted].png' %}" class="logo-header" alt="" srcset="">
+                        </div>
+                    </div>
+                    <nav class="nav-tabs" id="nav-tabs">
+                        <a class="nav-link link-secondary border-0 active tabbar" onclick="openbox(event, 'before')"
+                            href="#0">
+                            تیکت های اخیر
+                        </a>
+                        <a class="nav-link link-secondary border-0 tabbar" onclick="openbox(event, 'creation')"
+                            href="#0">
+                            ارسال تیکت جدید
+                        </a>
+                    </nav>
+                </header>
+                <!--The box is designed for the ticket section to be empty...-->
+                <div class="tabbox" id="before">
+                    <div class="row shadow-tobbox mt-5 p-4" style="display: none;">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-secondary text-center mt-5 mb-5">هیچ تیکت پشتیبانی برای نمایش وجود ندارد.</p>
+                        </div>
+                    </div>
+                    <!--Box design to display tickets...-->
+                    <div class="row shadow-tobbox mt-5 p-5 main-hight">
+                        <div class="col-12 d-flex flex-nowrap">
+                            <p class="note-tab col-6"><i class="bi bi-box-arrow-right"></i> تیکت های اخیر</p>
+                            <div class="col-6 d-flex justify-content-end text-center">
+                                <button class="custom-btn btn-13" style="width: auto;"
+                                    onclick="openbox(event, 'creation')">ثبت تیکت جدید</button>
+                            </div>
+                        </div>
+                        <table class="table text-secondary mt-5">
+                            <thead>
+                                <tr>
+                                    <th class="title-head">شماره</th>
+                                    <th class="title-head">موضوع تیکت</th>
+                                    <th class="title-head">تاریخ</th>
+                                    <th class="title-head" style="width:25%">وضعیت بررسی</th>
+                                    <th class="title-head text-center">مشاهده</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for ticket in all_tickets %}
+                            <tr>
+                                    <td>{{ ticket.pk }}</td>
+                                    <td>{{ ticket.title }}</td>
+                                    <td>{{ ticket.created_at }}</td>
+                                    <td>
+                                        <p class="text-warning text-table-alert">{{ ticket.status }}</p>
+                                        <p class="text-success text-table-alert" style="display:none;">بررسی شده</p>
+                                    </td>
+                                    <td class="text-center position-relative">
+                                        <i class="bi bi-card-text fs-4 icon-table text-center"
+                                            onclick="openbox(event, 'Condition')">
+                                            <span
+                                                class="position-absolute top-0 mt-2 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                                <span class="visually-hidden">New alerts</span>
+                                            </span>
+
+                                        </i>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="demo mt-5">
+                            <nav class="pagination-outer" aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Previous">
+                                            <span aria-hidden="true">«</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link" aria-label="Next">
+                                            <span aria-hidden="true">»</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!--Box design for communication with support...-->
+                <div class="tabbox" id="creation">
+                    <div class="row">
+                        <div class="mt-4 shadow-tobbox rounded-3 p-3">
+                            <div class="container mt-5">
+
+                                <div class="row  d-flex justify-content-center">
+
+                                    <div class="col-md-10 mb-5">
+
+                                        <div class="col-lg-12">
+                                            <h4 class="note-tab">پشتیبانی</h4>
+                                            <p class="text-secondary">پاسخگویی درسریع ترین زمان ممکن.</p>
+                                        </div>
+                                        <hr class="text-secondary">
+                                        <div class="col-lg-12">
+                                            <p class="note-tab">موضوع تیکت</p>
+                                            <input class="col-12 rounded-2 input" type="text"
+                                                placeholder="موضوع تیکت خودراواردکنید">
+                                            <p class="note-tab mt-5">پیام</p>
+                                            <textarea class="form-control col-12 rounded-2" aria-label="With textarea"
+                                                placeholder="توضیحات مربوط به تیکت خودرادراین قسمت واردنمایید"></textarea>
+                                            <div class="col-lg-12 d-flex flex-nowrap mt-5">
+                                                <div class="col-6">
+                                                    <p class="note-tab">قبل ازبارگذاری مجددصفحه،اطلاعات
+                                                        موردنظرراذخیره کنید.</p>
+                                                </div>
+                                                <div class="col-6 d-flex justify-content-end">
+                                                    <button class="custom-btn btn-13">ارسال تیکت</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--box designed to display support tickets...-->
+                <div class="tabbox mb-5" id="Condition">
+                    <div class="row mt-5">
+                        <div class="mt-4 shadow-tobbox rounded-3 p-3">
+                            <div class="container mt-5">
+
+                                <div class="row  d-flex justify-content-center">
+
+                                    <div class="col-md-10 mb-5">
+
+                                        <div class="headings d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="note-tab"><i class="bi bi-headset fs-1"></i> پشتیبانی</h5>
+                                        </div>
+                                        <div class="card card-comment p-3 mt-2">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="../img/61792-[Converted].jpg" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2">امیرعباس قاسمی</span>
+                                                    </div>
+                                                    <div
+                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>دیابت</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>1401/7/1</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-1 p-3">
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
+                                                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                                                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+                                                        کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان
+                                                        جامعه و متخصصان را می طلبد.
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-4">
+                                                        <img src="../img/2022-11-30_19h35_30.png" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2"><i class="bi bi-headset"></i>
+                                                            پشتیبانی</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h3 class="note-tab text-center responsive-m">
+                                                            دکترپلاس
+                                                        </h3>
+                                                    </div>
+                                                    <div
+                                                        class="action col-4 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>دیابت</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>1401/7/1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-3 p-3">
+                                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                                                        استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
+                                                        در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                                                        نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+                                                        کتابهای زیادی در شصت و سه درصد گذشته حال و آینده شناخت فراوان
+                                                        جامعه و متخصصان را می طلبد.
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-center flex-wrap align-items-center">
+                                                <h5 class="text-secondary">
+                                                    ارسال تیکت به پشتیبانی:
+                                                </h5>
+                                                <div
+                                                    class="container p-4 d-flex justify-content-around align-items-center">
+                                                    <textarea class="w-75 rounded-4 textarea-input p-3"
+                                                        placeholder="متن خودراواردکنید..."></textarea>
+                                                    <button class="custom-btn btn-13">ارسال</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
