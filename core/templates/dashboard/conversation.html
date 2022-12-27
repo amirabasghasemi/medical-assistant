@@ -1,10 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'dashboard_base.html' %}
+{% block content %}
+<div id="profile" style="height: 100%;" class="tabcontent body active">
+                    <div class="row mt-5">
+                        <div class="mt-4 shadow-tobbox rounded-3 p-3">
+                            <div class="container mt-5">
 
-</body>
-</html>
+                                <div class="row  d-flex justify-content-center">
+
+                                    <div class="col-md-10 mb-5">
+
+                                        <div class="headings d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="note-tab"><i class="bi bi-headset fs-1"></i> پشتیبانی</h5>
+                                        </div>
+                                        <div class="card card-comment p-3 mt-2">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="../img/61792-[Converted].jpg" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2">{{ ticket.created_by }}</span>
+                                                    </div>
+                                                    <div
+                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>{{ ticket.title }}</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>{{ ticket.created_time }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-1 p-3">
+                                                        {{ ticket.text }}
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
+                                            </div>
+                                        </div>
+                                        {% for con in conversations %}
+                                        {% if con.sender == request.user %}
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-4">
+                                                        <img src="../img/2022-11-30_19h35_30.png" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2"><i class="bi bi-headset"></i>
+                                                             پشتیبانی</span>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <h3 class="note-tab text-center responsive-m">
+                                                            دکترپلاس
+                                                        </h3>
+                                                    </div>
+                                                    <div
+                                                        class="action col-4 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>{{ ticket.title }}</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>{{ con.created_time }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-3 p-3">
+                                                        {{ con.text }}
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                        <div class="card card-comment p-3 mt-2">
+                                            <div class="d-flex justify-content-between flex-wrap align-items-center">
+                                                <div class="user d-flex col-12 align-items-center">
+                                                    <div class="col-6">
+                                                        <img src="../img/61792-[Converted].jpg" width="50"
+                                                            class="user-img border rounded-circle mr-2">
+                                                        <span class="text-secondary me-2">{{ request.user }}</span>
+                                                    </div>
+                                                    <div
+                                                        class="action col-6 note-tab d-flex flex-wrap mt-2 align-items-center">
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>موضوع تیکت:</p>
+                                                            <p>{{ ticket.title }}</p>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end col-12 m-0">
+                                                            <p>تاریخ:</p>
+                                                            <p>{{ con.created_time }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <p class="text-secondary mt-1 p-3">
+                                                        {{ con.text }}
+                                                    </p>
+                                                </div>
+
+                                                <small></small>
+
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+
+
+
+
+
+
+
+
+
+                                        <div class="card card-comment p-3 mt-4">
+                                            <div class="d-flex justify-content-center flex-wrap align-items-center">
+                                                <h5 class="text-secondary">
+                                                    ارسال تیکت به پشتیبانی:
+                                                </h5>
+                                                <form action="{% url 'ticket-conversation' ticket.pk %}" method="POST">
+                                                {% csrf_token %}
+                                                    <div
+                                                    class="container p-4 d-flex justify-content-around align-items-center">
+                                                    {{ form.text }}
+                                                    <button class="custom-btn btn-13" type="submit">ارسال</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+</div>
+{% endblock %}
