@@ -7,12 +7,19 @@ class TicketModel(models.Model):
         (0, 'در حال بررسی'),
         (1, 'تکمیل شده')
     )
-    title = models.TextField(max_length=128)
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=32)
+    text = models.TextField(max_length=512)
     status = models.SmallIntegerField(choices=status_choice, default=0)
     unread = models.BooleanField()
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_time = models.DateTimeField(auto_now_add=True)
     modify_time = models.DateTimeField(auto_now=True)
+
+    def change_unread(self, user):
+        if user.is_staff:
+            self.unread = True
+        else:
+            self.unread = False
 
 
 class SubTicketModel(models.Model):
