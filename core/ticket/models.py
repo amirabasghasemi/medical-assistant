@@ -15,6 +15,9 @@ class TicketModel(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     modify_time = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
     def change_unread(self, user):
         if user.is_staff:
             self.unread = True
