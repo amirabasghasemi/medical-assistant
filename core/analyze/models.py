@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -23,4 +24,10 @@ class DiabetesModel(models.Model):
     Sex = models.PositiveSmallIntegerField()
     Age = models.PositiveSmallIntegerField()
     Education = models.PositiveSmallIntegerField()
+    Label = models.CharField(max_length=32)
+    Date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='diabetes')
+    result = models.CharField(max_length=32)
 
+    def __str__(self):
+        return self.user

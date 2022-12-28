@@ -1,3 +1,4 @@
+from collections import Counter
 from datetime import datetime
 
 import numpy as np
@@ -22,7 +23,6 @@ def analyze_diabetes(HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDise
     plt.title("Countplot of Participants' Diabetes")
     for i in ax.containers:
         ax.bar_label(i, ),
-    data.Diabetes_012[data.Diabetes_012 == 2] = 1
     data.Diabetes_012.unique()
     plt.figure(figsize=(3, 4))
     ax = sns.countplot(x=df0[Q], data=df0)
@@ -33,7 +33,6 @@ def analyze_diabetes(HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDise
 
     data.drop('Diabetes_012', axis=1).corrwith(data.Diabetes_012).sort_values(
         ascending=False).plot(kind='bar', grid=True, figsize=(12, 4), title="Correlation with Diabetes")
-    data = data.drop('Income', axis=1)
     data.drop('Diabetes_012', axis=1).corrwith(data.Diabetes_012).sort_values(
         ascending=False).plot(kind='bar', grid=True, figsize=(12, 4), title="Correlation with Diabetes")
 
@@ -60,9 +59,14 @@ def analyze_diabetes(HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDise
                    HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth,
                    MentHlth, PhysHlth, DiffWalk, Sex, Age, Education]]
     Diabetes_Prediction = clf.predict(new_vector)
-    if Diabetes_Prediction == 2:
+    if Diabetes_Prediction == 1:
         result = "Positive"
     else:
         result = "Negative"
     data0 = data[data["Age"] == Age]
-    pd.crosstab(data0.Age, data0.Diabetes_012)
+    a = Counter(data0.Diabetes_012)
+    positive  = a.get(0.1)
+    negative  = a.get(0.0)
+    return result, positive, negative
+
+
