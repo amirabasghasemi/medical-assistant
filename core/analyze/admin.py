@@ -7,5 +7,5 @@ from analyze.models import DiabetesModel
 
 @register(DiabetesModel)
 class DiabetesAdmin(admin.ModelAdmin):
-    list_display = ['user', 'label']
+    list_display = ['user', 'result']
 
