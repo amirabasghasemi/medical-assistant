@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'ticket.apps.TicketConfig',
+    'analyze.apps.AnalyzeConfig'
 ]
 
 AUTH_USER_MODEL = 'account.User'
