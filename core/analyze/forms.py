@@ -13,6 +13,23 @@ class DiabetesForm(forms.ModelForm):
     class Meta:
         model = DiabetesModel
         exclude = ('Diabetes_012', 'Label', 'Date', 'user', 'result')
+        widgets = {
+            'HighBP': forms.RadioSelect,
+            'HighChol': forms.RadioSelect,
+            'CholCheck': forms.RadioSelect,
+            'Smoker': forms.RadioSelect,
+            'Stroke': forms.RadioSelect,
+            'HeartDiseaseorAttack': forms.RadioSelect,
+            'PhysActivity': forms.RadioSelect,
+            'Fruits': forms.RadioSelect,
+            'Veggies': forms.RadioSelect,
+            'HvyAlcoholConsump': forms.RadioSelect,
+            'AnyHealthcare': forms.RadioSelect,
+            'NoDocbcCost': forms.RadioSelect,
+            'DiffWalk': forms.RadioSelect,
+            'Sex': forms.RadioSelect,
+            'Education': forms.RadioSelect
+        }
 
 
 
