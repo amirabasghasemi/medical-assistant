@@ -14,21 +14,21 @@ class DiabetesForm(forms.ModelForm):
         model = DiabetesModel
         exclude = ('Diabetes_012', 'Label', 'Date', 'user', 'result')
         widgets = {
-            'HighBP': forms.RadioSelect,
-            'HighChol': forms.RadioSelect,
-            'CholCheck': forms.RadioSelect,
-            'Smoker': forms.RadioSelect,
-            'Stroke': forms.RadioSelect,
-            'HeartDiseaseorAttack': forms.RadioSelect,
-            'PhysActivity': forms.RadioSelect,
-            'Fruits': forms.RadioSelect,
-            'Veggies': forms.RadioSelect,
-            'HvyAlcoholConsump': forms.RadioSelect,
-            'AnyHealthcare': forms.RadioSelect,
-            'NoDocbcCost': forms.RadioSelect,
-            'DiffWalk': forms.RadioSelect,
-            'Sex': forms.RadioSelect,
-            'Education': forms.RadioSelect
+            'HighBP': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'HighChol': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'CholCheck': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Smoker': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Stroke': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'HeartDiseaseorAttack': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'PhysActivity': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Fruits': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Veggies': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'HvyAlcoholConsump': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'AnyHealthcare': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'NoDocbcCost': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'DiffWalk': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Sex': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"}),
+            'Education': forms.RadioSelect(attrs={'class': "border-0 opacity-0 ms-4"})
         }
 
 
