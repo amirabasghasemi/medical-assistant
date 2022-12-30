@@ -1,7 +1,8 @@
 {% extends 'dashboard_base.html' %}
+{% load static %}
 {% block content %}
 
-<div id="New-test" class="tabcontent body">
+<div id="New-test" class="tabcontent body active">
                 <header>
                     <div class="col-12 d-flex">
                         <div class="col-6">
@@ -32,30 +33,24 @@
                                         <hr class="line-card">
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا درطول زندگی خود حداقل 100 نخ سیگار
-                                            کشیده اید؟</h6>
+                                        <h6 class="card-title text-secondary">جنسیت خود را مشخص کنید</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.Sex %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +61,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره پانزده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره بیستم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -75,30 +70,11 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیاشمافشارخون بالادارید؟</h6>
+                                        <h6 class="card-title text-secondary">به نظرتان سلامت جسمی شما چه میزان است؟(1-5)</h6>
                                         <div class="d-flex">
                                             <div class="d-flex mt-4 col-6">
                                                 <div class="grid">
-                                                    <label class="checkbox path">
-                                                        -بله
-                                                        <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                        <svg viewBox="0 0 21 21">
-                                                            <path
-                                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                            </path>
-                                                        </svg>
-                                                    </label>
-                                                </div>
-                                                <div class="grid me-4">
-                                                    <label class="checkbox path">
-                                                        -خیر
-                                                        <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                        <svg viewBox="0 0 21 21">
-                                                            <path
-                                                                d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                            </path>
-                                                        </svg>
-                                                    </label>
+                                                    {{ form.GenHlth }}
                                                 </div>
                                             </div>
                                             <!--Test result display button...-->
@@ -120,10 +96,8 @@
                                                         <div class="modal-body">
                                                             <p class="text-secondary m-0 mb-2 p-0">میزان ابتلاء شما به
                                                                 دیابت برحسب درصد.</p>
-                                                            <canvas class="chart" id="myChart"
-                                                                style="width:100%;max-width:600px"></canvas>
-                                                            <div
-                                                                class="box-shadow-pie d-flex m-0 justify-content-center">
+                                                            <canvas class="chart" id="myChart" style="width:100%;max-width:600px"> </canvas>
+                                                            <div class="box-shadow-pie d-flex m-0 justify-content-center">
                                                                 <div class="shadow-pie m-0 mt-4 border">
                                                                 </div>
                                                             </div>
@@ -146,7 +120,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهارده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره نوزدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -155,30 +129,10 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا درطول زندگی خود سابقه سکردن داشته اید؟
-                                        </h6>
+                                        <h6 class="card-title text-secondary">حالا به سلامتی جسمانی خود که شامل بیماری و آسیب جسمی می شود فکر کنید، در طول 30 روز گذشته چند روز سلامت جسمانی شما خوب نبوده است؟ (0 تا 30)</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                {{ form.PhysHlth }}
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +141,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره سیزده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هجدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -196,40 +150,10 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">وضعیت دیابت شمادرچه سطحی می باشد؟</h6>
+                                        <h6 class="card-title text-secondary">اکنون که به سلامت روان خود که شامل استرس، افسردگی و مشکلات عاطفی است فکر کنید، در طول ۳۰ روز گذشته چند روز سلامت روانی خوب نبوده است؟(0 تا 30)</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بدون دیابت
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-5">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -ابتدای بیماری
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-auto">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -دیابت
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-5">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                {{ form.MentHlth }}
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +162,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره دوازده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هفدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -247,29 +171,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا کلسترول بدن شمابالامی باشد؟</h6>
+                                        <h6 class="card-title text-secondary">مصرف زیاد الکل در هفته دارید؟ (مردان بالغ بیش از ۱۴ نوشیدنی در هفته زنان بالغ بیشتر از ۷ نوشیدنی در هفته مصرف میکنند)</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.HvyAlcoholConsump %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -278,7 +197,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره یازده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره شانزدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -287,31 +206,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا ازطریق آزمایش کلسترول بدن خودرادر5سال
-                                            اخیربررسی کرده
-                                            اید؟</h6>
+                                        <h6 class="card-title text-secondary">آیا در راه رفتن یا بالا رفتن از پله ها مشکل جدی دارید؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.DiffWalk %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -320,7 +232,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره ده</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره پانزدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -329,29 +241,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیامیزان چربی بدن شمابالامی باشد؟</h6>
+                                        <h6 class="card-title text-secondary">آیا تا حالا سکته کرده اید؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.Stroke %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -360,7 +267,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره نه</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهاردهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -369,29 +276,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیاشمادارای بیماری کرونروی قلب هستید؟</h6>
+                                        <h6 class="card-title text-secondary">آیا تا به حال بیماری عروق کرونر قلب (CHD) یا انفارکتوس میوکارد (MI) را گزارش کرده اید؟ ( بیماری یا حمله قلبی)</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.HeartDiseaseorAttack %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -400,7 +302,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره هشت</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره سیزدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -409,31 +311,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیادر30روزگذشته فعالیت بدنی داشته
-                                            اید؟(بدون احتساب شغل).
-                                        </h6>
+                                        <h6 class="card-title text-secondary">آیا در تمام زندگی خود حداقل ۱۰۰ نخ سیگار کشیده اید؟ [توجه: ۵ بسته = ۱۰۰ نخ]</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.Smoker %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -442,7 +337,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره هقت</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره دوازدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -451,30 +346,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیامیوه رادرروزازیک وعده بیشترمصرف میکنید؟
-                                        </h6>
+                                        <h6 class="card-title text-secondary">آیا کلسترول تان در پنج سال گذشته بررسی شده است؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.CholCheck %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -483,7 +372,7 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره شش</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره یازدهم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
@@ -492,30 +381,199 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیاسبزیجات رادروزبیشترازیک وعده مصرف می
-                                            کنید؟</h6>
+                                        <h6 class="card-title text-secondary">آیا توسط پزشک، پرستار یا سایر متخصصان بهداشت به شما گفته شده کلسترول خون شما بالا است؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.HighChol %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره دهم</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا توسط پزشک، پرستار یا سایر متخصصان بهداشت به شما گفته شده فشار خون بالا دارید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <ul class="p-1">
+                                                {% for radio in form.HighBP %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره نهم</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا در ۱۲ ماه گذشته زمانی وجود داشته است که شما نیاز به مراجعه به پزشک داشته باشید اما به دلیل هزینه نمی توانید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <ul class="p-1">
+                                                {% for radio in form.NoDocbcCost %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هشتم</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">آیا هر نوع پوشش مراقبت های بهداشتی از جمله بیمه درمانی، پزشک خانواده یا خدمات بهداشتی دارید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <ul class="p-1">
+                                                {% for radio in form.AnyHealthcare %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره هفتم</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">سبزیجات را یکبار یا بیشتر در روز مصرف میکنید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <ul class="p-1">
+                                                {% for radio in form.Veggies %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item mt-2  p-5">
+                                <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
+                                    <div class="card-header d-flex bg-white border-0">
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره ششم</div>
+                                        <div class="col-6 justify-content-end d-flex"><img
+                                                src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
+                                                srcset=""></div>
+                                    </div>
+                                    <div class="container">
+                                        <hr>
+                                    </div>
+                                    <div class="card-body">
+                                        <h6 class="card-title text-secondary">میوه رایکبار یا بیشتر در روز مصرف میکنید؟</h6>
+                                        <div class="d-flex mt-4">
+                                            <div class="grid">
+                                                <ul class="p-1">
+                                                {% for radio in form.Fruits %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
+                                                    <svg viewBox="0 0 21 21">
+                                                        <path
+                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
+                                                        </path>
+                                                    </svg>
+                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -533,31 +591,24 @@
                                         <hr>
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیادر 12 ماه گذشته زمانی وجود داشته است که
-                                            شما نیاز به
-                                            مراجعه به پزشک داشته باشید اما به دلیل هزینه نتوانسته اید؟</h6>
+                                        <h6 class="card-title text-secondary">آیا در 30 روز گذشته به غیر از شغل معمولی خود، فعالیت بدنی یا ورزش کرده اید؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
+                                                <ul class="p-1">
+                                                {% for radio in form.PhysActivity %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
                                                     <svg viewBox="0 0 21 21">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -566,39 +617,19 @@
                             <div class="carousel-item mt-2  p-5">
                                 <div class="card p-2 shadow-tobbox border-0" style="width:100%;">
                                     <div class="card-header d-flex bg-white border-0">
-                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهار</div>
+                                        <div class="col-6 mt-3 text-secondary">سوال شماره چهارم</div>
                                         <div class="col-6 justify-content-end d-flex"><img
                                                 src="../logo/61792-[Converted].png" style="height: 50px;" alt=""
                                                 srcset=""></div>
                                     </div>
                                     <div class="container">
-                                        <hr>
+                                        <hr class="line-card">
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">آیا در راه رفتن یا بالا رفتن از پله ها
-                                            مشکل جدی دارید؟</h6>
+                                        <h6 class="card-title text-secondary">شاخص توده بدنی شما(BMI) چقدر می باشد؟(100-5)</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -بله
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیر
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                {{ form.BMI }}
                                             </div>
                                         </div>
                                     </div>
@@ -613,32 +644,27 @@
                                                 srcset=""></div>
                                     </div>
                                     <div class="container">
-                                        <hr>
+                                        <hr class="line-card">
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">جنسسیت خودرامشخص کنید</h6>
+                                        <h6 class="card-title text-secondary">مدرک تحصیلی شما چیست؟</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -خانم
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
+                                                <ul class="p-0">
+                                                {% for radio in form.Education %}
+                                                    <li style="display: inline;">
+                                                        <label class="checkbox path" for="{{ radio.id_for_label }}">
+                                                            {{ radio.choice_label }}
+                                                            {{ radio.tag }}
+                                                    <svg viewBox="0 0 21 21" style="left: -25px">
                                                         <path
                                                             d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
                                                         </path>
                                                     </svg>
                                                 </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -آقا
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                    </li>
+                                                {% endfor %}
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -653,55 +679,13 @@
                                                 srcset=""></div>
                                     </div>
                                     <div class="container">
-                                        <hr>
+                                        <hr class="line-card">
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="card-title text-secondary">به طورکلی سطح سلامت بدن خودرادرچه سطحی می
-                                            بینید؟</h6>
+                                        <h6 class="card-title text-secondary">سن خود را وراد کنید</h6>
                                         <div class="d-flex mt-4">
                                             <div class="grid">
-                                                <label class="checkbox path">
-                                                    -خوب
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -خیلی خوب
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -متوسط
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
-                                            </div>
-                                            <div class="grid me-4">
-                                                <label class="checkbox path">
-                                                    -ضعیف
-                                                    <input type="checkbox" class="border-0 opacity-0 ms-4">
-                                                    <svg viewBox="0 0 21 21">
-                                                        <path
-                                                            d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186">
-                                                        </path>
-                                                    </svg>
-                                                </label>
+                                                {{ form.Age }}
                                             </div>
                                         </div>
                                     </div>
@@ -722,5 +706,4 @@
                     </div>
                 </div>
   </div>
-
 {% endblock %}
