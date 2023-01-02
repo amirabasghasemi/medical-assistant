@@ -20,7 +20,7 @@
                     </a>
                     <ul class="dropdown-menu text-small shadow border-0 rounded-3" style="width: 150px;"
                         data-popper-placement="bottom-end">
-                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                        <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="{% url 'test' %}">تست جدید +</a></li>
                         <li><a class="dropdown-item" href="#">تنظیمات</a></li>
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
                                 data-bs-target="#exampleModale">پروفایل</a></li>
@@ -39,9 +39,9 @@
             <div class="offcanvas-body">
                 <nav class="site-nav">
                     <ul class=" mt-4 p-0">
-                        <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="{% url 'tickets' %}">تیکت
+                        <li class="list-group tablinks" onclick="openCity(event, 'profile')"><a href="{% url 'tickets' %}">تیکت
                                 ها</a></li>
-                        <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
+                        <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="{% url 'test' %}">تست جدید</a>
                         </li>
                         <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a>
                         </li>
@@ -64,7 +64,7 @@
                     amirabasghasemi2022
                 </a>
                 <ul class="dropdown-menu text-small shadow border-0 rounded-3" data-popper-placement="bottom-end">
-                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="#">تست جدید +</a></li>
+                    <li><a class="dropdown-item" onclick="openCity(event, 'New-test')" href="{% url 'test' %}">تست جدید +</a></li>
                     <li><a class="dropdown-item" href="#">تنظیمات</a></li>
                     <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
                             data-bs-target="#exampleModale">پروفایل</a></li>
@@ -72,10 +72,10 @@
                 </ul>
             </div>
             <ul class="p-1">
-                <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="#0">تست جدید</a>
+                <li class="list-group tablinks" onclick="openCity(event, 'New-test')"><a href="{% url 'test' %}">تست جدید</a>
                 </li>
                 <li class="list-group tablinks" onclick="openCity(event, 'Experiments')"><a href="#0">سوابق</a></li>
-                <li class="list-group tablinks active" onclick="openCity(event, 'profile')"><a href="{% url 'tickets' %}">تیکت ها</a></li>
+                <li class="list-group tablinks" onclick="openCity(event, 'profile')"><a href="{% url 'tickets' %}">تیکت ها</a></li>
 
                 <li class="list-group" data-bs-toggle="modal" data-bs-target="#exampleModal1"><a>خروج</a></li>
             </ul>
