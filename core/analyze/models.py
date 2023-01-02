@@ -1,3 +1,5 @@
+import datetime
+
 from django.conf import settings
 from django.db import models
 
@@ -22,7 +24,7 @@ class DiabetesModel(models.Model):
         (6, '-دکترا')
     )
 
-    Diabetes_012 = models.PositiveSmallIntegerField()
+    Diabetes_012 = models.FloatField()
     HighBP = models.PositiveSmallIntegerField(choices=CHOICE_YES_NO, blank=False, default=-1)
     HighChol = models.PositiveSmallIntegerField(choices=CHOICE_YES_NO, blank=False, default=-1)
     CholCheck = models.PositiveSmallIntegerField(choices=CHOICE_YES_NO, blank=False, default=-1)
@@ -51,30 +53,33 @@ class DiabetesModel(models.Model):
     def __str__(self):
         return self.user
 
-    def age_rate(self, age):
-        if (age >= '18') and (age <= '24'):
+    def save_model(self, age, user, label='IR'):
+        if (age >= 18) and (age <= 24):
             self.Age = 1
-        elif (age >= '25') and (age <= '29'):
+        elif (age >= 25) and (age <= 29):
             self.Age = 2
-        elif (age >= '30') and (age <= '34'):
+        elif (age >= 30) and (age <= 34):
             self.Age = 3
-        elif (age >= '35') and (age <= '39'):
+        elif (age >= 35) and (age <= 39):
             self.Age = 4
-        elif (age >= '40') and (age <= '44'):
+        elif (age >= 40) and (age <= 44):
             self.Age = 5
-        elif (age >= '45') and (age <= '49'):
+        elif (age >= 45) and (age <= 49):
             self.Age = 6
-        elif (age >= '50') and (age <= '54'):
+        elif (age >= 50) and (age <= 54):
             self.Age = 7
-        elif (age >= '55') and (age <= '59'):
+        elif (age >= 55) and (age <= 59):
             self.Age = 8
-        elif (age >= '60') and (age <= '64'):
+        elif (age >= 60) and (age <= 64):
             self.Age = 9
-        elif (age >= '65') and (age <= '69'):
+        elif (age >= 65) and (age <= 69):
             self.Age = 10
-        elif (age >= '70') and (age <= '74'):
+        elif (age >= 70) and (age <= 74):
             self.Age = 11
-        elif (age >= '75') and (age <= '79'):
+        elif (age >= 75) and (age <= 79):
             self.Age = 12
-        elif age >= '80':
+        elif age >= 80:
             self.Age = 13
+        self.user = user
+        self.Date = datetime.datetime.now()
+        self.Label = label
