@@ -3,6 +3,8 @@
 {% block content %}
 
 <div id="New-test" class="tabcontent body active">
+    <form method="POST" action="{% url 'test' %}">
+        {% csrf_token %}
                 <header>
                     <div class="col-12 d-flex">
                         <div class="col-6">
@@ -80,7 +82,7 @@
                                             <!--Test result display button...-->
                                             <div class="col-6 d-flex justify-content-end align-items-center">
                                                 <button class="custom-btn btn-5" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal"><span>نتیجه تست</span></button>
+                                                    data-bs-target="#exampleModal" type="submit"><span>نتیجه تست</span></button>
                                             </div>
                                             <!--modal to display the result of the title...-->
                                             <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -705,5 +707,6 @@
 
                     </div>
                 </div>
+        </form>
   </div>
 {% endblock %}
