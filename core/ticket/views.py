@@ -10,9 +10,7 @@ def ticket_conversation(request, pk):
     ticket = get_object_or_404(TicketModel, pk=pk)
     if ticket.created_by != request.user:
         return Http404
-    print(111111111111111)
     if request.method == 'POST':
-        print(222222222222)
         form = SubTicketForm(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
