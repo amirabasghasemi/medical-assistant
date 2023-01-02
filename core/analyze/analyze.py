@@ -61,12 +61,14 @@ def analyze_diabetes(HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HeartDise
     Diabetes_Prediction = clf.predict(new_vector)
     if Diabetes_Prediction == 1:
         result = "Positive"
+        prediction = 0.1
     else:
         result = "Negative"
+        prediction = 0.0
     data0 = data[data["Age"] == Age]
     a = Counter(data0.Diabetes_012)
     positive  = a.get(0.1)
     negative  = a.get(0.0)
-    return result, positive, negative
+    return result, positive, negative, prediction
 
 
