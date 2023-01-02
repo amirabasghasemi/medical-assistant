@@ -7,7 +7,7 @@ from lib.validators import bmi_validate, general_health_validate, mental_physica
 class DiabetesForm(forms.ModelForm):
     BMI = forms.IntegerField(validators=[bmi_validate])
     GenHlth = forms.IntegerField(validators=[general_health_validate])
-    MenHlth = forms.IntegerField(validators=[mental_physical_health_validate])
+    MentHlth = forms.IntegerField(validators=[mental_physical_health_validate])
     PhysHlth = forms.IntegerField(validators=[mental_physical_health_validate])
     Age = forms.IntegerField(validators=[age_validate])
     class Meta:
